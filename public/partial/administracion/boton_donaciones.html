@@ -1,0 +1,34 @@
+<admin-toolbar></admin-toolbar>
+<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+    <table class="table table-striped ">
+        <thead>
+        <tr>
+            <th> Editar</a></th>
+            <th> Correo</a></th>
+            <th> Fecha</th>
+            <th> Eliminar</th>
+            <th> Estado</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="d in donacion | orderBy : '- _id' ">
+            <td>
+                <a  ng-href="#/edit">
+                <button  class="btn" ng-click="clickEdit(user.id)">
+                    <span class="glyphicon glyphicon-pencil"></span>Editar
+                </button>
+                </a>
+            </td>
+            <td >{{d.correo}} </td>
+            <td>{{ d.timestamp | date : format : timezone }}</td>
+            <td><md-button class="md-warn" ng-click="deletedonacion(d._id)">Borrar</md-button></td>
+            <td>
+                <md-button ng-class="{Enviado:'', Pendiente:'md-raised md-warn'}[d.estado]" ng-click="estadoDonacion(d);">{{d.estado}}
+                </md-button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+    <hr>
+    Total Donantes: {{getTotalinscritos()}}

@@ -1,0 +1,50 @@
+<section>
+	<h1>Contactenos ::</h1>
+</section>
+<div class="contacto_form">
+	<div class="contacto_form_block">
+		<form class="form" name="myForm1">
+		    <div class="form-group">
+		        <label>Nombre:</label>
+		        <div class="texto">
+		            <input type="text" ng-model="contacto.nombre" required>
+		        </div>
+		    </div>
+		    <div class="form-group">
+		        <label>Apellido:</label>
+		        <div class="texto">
+		            <input type="text"  ng-model="contacto.apellido"  required>
+		        </div>
+		    </div>
+		    <div class="form-group">
+		        <label class="col-sm-2 control-label">Organización:</label>
+		        <div class="texto">
+		            <input type="text"  ng-model="contacto.organizacion" >
+		        </div>
+		    </div>
+		    <div class="form-group">
+		        <label class="col-sm-2 control-label">Celular:</label>
+		        <div class="texto">
+		            <input type="number" ng-model="contacto.celular" >
+		        </div>
+		    </div>
+		    <div class="form-group">
+		        <label class="col-sm-2 control-label">Email:</label>
+		        <div class="texto">
+		            <input type="email"  ng-model="contacto.email"  required>
+		        </div>
+		    </div>
+		    <div class="form-group">
+		        <label class="col-sm-2 control-label">Comentario:</label>
+		        <div class="texto">
+		            <textarea type="text" ng-model="contacto.comentario"></textarea>	
+		        </div>
+		    </div> 
+		</form>
+			<a ng-href="#/lista_clientes">
+			<button class="btn btn-success" ng-click="submitCreate()" >
+			    <span class="glyphicon glyphicon-save"></span> Enviar
+			</button>
+			</a>
+	</div>
+</div>

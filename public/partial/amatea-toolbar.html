@@ -1,0 +1,53 @@
+<div ng-controller="AppCtrl" layout="column"  ng-cloak>
+  <section layout="row" flex>
+    
+    <md-content flex >
+      <div layout="column"  layout-align="none">
+        <md-toolbar md-theme="amatea-theme" layout="row" layout-align="center center">
+	        
+	        
+  	  		<md-fab-trigger md-theme="amatea-theme-footer" class="align-with-text" hide-gt-xs>
+  	      		<md-button aria-label="menu" class="md-fab md-mini" ng-click="toggleRight()" ng-hide="isOpenRight()">
+  	       		 <md-icon md-svg-src="img/icons/menu.svg"></md-icon>
+  	      		</md-button>
+  	    	</md-fab-trigger>
+          <a href="#/inicio.html"><div  class="header_logo"></div></a>
+          <span flex></span>
+            <div layout="row" hide-xs>
+              <md-button ng-href="#/somos/">Somos ::</md-button>
+              <md-button ng-href="#/servicios/">Servicios ::</md-button> 
+              <md-button ng-href="#/hacemos/">Hacemos ::</md-button> 
+              <md-button ng-href="#/contactenos/">Contactenos ::</md-button> 
+            </div>
+
+                
+         
+        
+        </md-toolbar>
+      </div>
+    </md-content>
+
+    <md-sidenav md-component-id="right">
+      <md-toolbar md-theme="amatea-theme-footer" layout-align="center center">
+      <a href="#/inicio.html"><div  class="header_logo"></div></a>
+      </md-toolbar>
+      <md-content ng-controller="RightCtrl" layout="column" layout-padding>
+        <md-button ng-click="close()" ng-href="#/somos/">Somos ::</md-button>
+        <md-button ng-click="close()" ng-href="#/servicios/">Servicios ::</md-button>
+        <md-button ng-click="close()" ng-href="#/hacemos/">Hacemos ::</md-button>
+        <md-button ng-click="close()" ng-href="#/contactenos/">Contactenos ::</md-button> 
+      </md-content>
+      <md-content md-theme="amatea-theme-footer" layout="row" layout-align="center center">
+        <md-button  class="md-fab md-mini md-primary" ng-click="close()" target="_new" ng-href="http://www.facebook.com/amatea.org">
+          <md-icon md-svg-src="img/icons/facebook.svg"></md-icon>
+        </md-button>
+        <md-button  class="md-fab md-mini md-primary" ng-click="close()" target="_new" ng-href="http://www.twitter.com/amatea_">
+          <md-icon md-svg-src="img/icons/twitter.svg"></md-icon>
+        </md-button>
+        <md-button  class="md-fab md-mini md-primary" ng-click="close()" target="_new" ng-href="http://www.youtube.com/comunicateatv">
+          <md-icon md-svg-src="img/icons/youtube.svg"></md-icon>
+        </md-button>
+      </md-content>
+    </md-sidenav>
+  </section>
+</div>

@@ -1,0 +1,1 @@
+$("div").remove(".loader");

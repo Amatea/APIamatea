@@ -1,0 +1,73 @@
+<section class="siembra_bosques">
+	<h1>
+		BOSQUES PARA VOLAR ::
+	</h1>
+	<div>
+		<p>Vive la Experiencia de sincronizarte con la naturaleza</p>
+		<h2><strong>Siembra de Árboles + Avistamiento de Aves + Pagamento</strong></h2>
+		<p>23 de abril de 2016 :: Celebración Día de la Tierra</p>
+    <p>Es necesario que todas las personas mayores de 18 años, realicen individualmente su inscripción</p>
+	</div>
+  <h2>Inscribete hasta el 20 de abril!!</h2>
+<div layout="column" ng-cloak class="md-inline-form">
+  <md-content md-theme="docs-dark"layout-padding>
+      <form name="userForm">
+      	<div layout-gt-sm="row">
+  	      <md-input-container class="md-block" flex-gt-sm >
+  	        <label>Nombre(s) ::</label>
+  	        <input required name="clientName" ng-model="bosque.nombre" ng-required="true">
+  	        <div ng-messages="userForm.clientName.$error">
+            <div ng-message="required">Se requiere esta información::</div>
+          </md-input-container>
+        </div>
+  	      <md-input-container class="md-block" flex-gt-sm>
+  	        <label>Apellidos ::</label>
+  	        <input ng-model="bosque.apellido">
+  	      </md-input-container>
+    	</div>
+    	<div layout-gt-sm="row">
+    		<md-input-container class="md-block" flex-gt-sm>
+		        <label>Correo Electronico ::</label>
+		        <input ng-model="bosque.correo" type="email">
+      		</md-input-container>
+      		<md-input-container class="md-block" flex-gt-sm>
+		        <label>Número Celular ::</label>
+		        <input ng-model="bosque.celular">
+      		</md-input-container>
+      	</div>
+        <div layout-gt-xs="row">
+          <md-input-container class="md-block" flex-gt-xs>
+            <label>Número de niños y niñas entre 5 y 17 años que te acompañaran</label>
+            <input ng-model="bosque.acompanante">
+          </md-input-container>
+        </div>
+        <div><p>recuerda que estamos celebrando el día de la tierra, si tienes transporte, trata de llenar todos los puestos de tu vehículo con otras personas que quieran paticipar</p><p></p></div>
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Cuentas con transporte?</label>
+            <md-select ng-model="bosque.transporte">
+              <md-option ng-repeat="tra in transporte" value="{{tra.abbrev}}">
+                {{tra.abbrev}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Si tienes transporte, cuantos cupos tienes disponibles para compartir?</label>
+            <input ng-model="bosque.transporte_compartir">
+          </md-input-container>
+        </div>
+        </div>
+        
+      </form>
+      <a href="#/bosques_gracias/"><md-button class="md-accent" ng-click="addUsuario()">Enviar</md-button></a>
+  </md-content>
+</div>
+<hr>
+	<h2>Organizan ::</h2>
+	<div >
+		<p><img src="img/birdfair_2016.png" height="150px" alt=""></p>
+		<p><img src="img/logo parques.jpg" height="150px" alt=""></p>
+		<p><img src="img/Rio Cali Logo.jpg" height="150px" alt=""></p>
+		<p><img src="img/logo_amatea_2016.jpg" height="100px" alt=""></p>
+	</div>
+</section>

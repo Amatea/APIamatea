@@ -1,0 +1,33 @@
+<admin-toolbar></admin-toolbar>
+<div class="layaout-gt-xs">
+<table class="table table-striped ">
+        <thead>
+        <tr>
+            <th> nombre</th>
+            <th> apellido</th>
+            <th> correo</th>
+            <th> celular</th>
+            <th> acompañante</th>
+            <th> transporte</th>
+            <th> cupos </th>
+            <th> fecha</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="d in usuario | orderBy : '-_id' ">
+            <td >{{d.nombre}} </td>
+            <td >{{d.apellido}} </td>
+            <td >{{d.correo}} </td>
+            <td >{{d.celular}} </td>
+            <td >{{d.acompanante}} </td>
+            <td >{{d.transporte}} </td>
+            <td >{{d.transporte_compartir}} </td>
+            <td>{{ d.timestamp | date : format : timezone }}</td>
+            <td><md-button class="md-warn" ng-click="deleteusuario(d._id)">Borrar</md-button></td>
+        </tr>
+        </tbody>
+    </table>
+    <hr>
+    Numero de Inscritos:: {{getTotalinscritos()}}
+</div>

@@ -1,0 +1,163 @@
+.rb {
+	background-image: url("/img/marcas/RB_bw.png");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 153px;
+	height: 93px;
+}
+	.rb:hover {
+		background-image: url("/img/marcas/RB.png");
+}
+
+.jnj {
+	background-image: url("/img/marcas/jnjbw.png");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 153px;
+	height: 93px;
+}
+	.jnj:hover {
+		background-image: url("/img/marcas/jnj.png");
+}
+
+.recamier {
+	background-image: url("/img/marcas/recamierbw.png");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 153px;
+	height: 93px;
+}
+	.recamier:hover {
+		background-image: url("/img/marcas/recamierbw.png");
+}
+
+.bancolombia {
+	background-image: url("/img/marcas/bancolombiabw.png");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 153px;
+	height: 93px;
+}
+	.bancolombia:hover {
+		background-image: url("/img/marcas/bancolombia.png");
+}
+.bolivar {
+	background-image: url("/img/marcas/bolivarbw.png");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 153px;
+	height: 93px;
+}
+	.bolivar:hover {
+		background-image: url("/img/marcas/bolivar.png");
+}
+.sidoc {
+	background-image: url("/img/marcas/sidocbw.png");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 153px;
+	height: 93px;
+}
+	.sidoc:hover {
+		background-image: url("/img/marcas/sidoc.png");
+}
+.proteccion {
+	background-image: url("/img/marcas/proteccionbw.png");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 153px;
+	height: 93px;
+}
+	.proteccion:hover {
+		background-image: url("/img/marcas/proteccion.png");
+}
+.contreebute {
+	background-image: url("/img/marcas/contreebutebw.png");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 153px;
+	height: 120px;
+}
+	.contreebute:hover {
+		background-image: url("/img/marcas/contreebute.png");
+}
+.wwf {
+	background-image: url("/img/marcas/wwfbw.png");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 153px;
+	height: 93px;
+}
+	.wwf:hover {
+		background-image: url("/img/marcas/wwfbw.png");
+}
+.natura {
+	background-image: url("/img/marcas/naturabw.png");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 153px;
+	height: 120px;
+}
+	.natura:hover {
+		background-image: url("/img/marcas/natura.png");
+}
+.patrimonio {
+	background-image: url("/img/marcas/patrimoniobw.png");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 153px;
+	height: 93px;
+}
+	.patrimonio:hover {
+		background-image: url("/img/marcas/patrimonio.png");
+}
+.javeriana {
+	background-image: url("/img/marcas/javerianabw.png");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 153px;
+	height: 93px;
+}
+	.javeriana:hover {
+		background-image: url("/img/marcas/javeriana.png");
+}
+.parques {
+	background-image: url("/img/marcas/parquesbw.png");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 153px;
+	height: 130px;
+}
+	.parques:hover {
+		background-image: url("/img/marcas/parques.png");
+}
+.cvc {
+	background-image: url("/img/marcas/cvcbw.png");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 153px;
+	height: 100px;
+}
+	.cvc:hover {
+		background-image: url("/img/marcas/cvc.png");
+}
+.humboldt {
+	background-image: url("/img/marcas/humboldtbw.png");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 153px;
+	height: 150px;
+}
+	.humboldt:hover {
+		background-image: url("/img/marcas/humboldt.png");
+}
+.pais {
+	background-image: url("/img/marcas/paisbw.png");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 153px;
+	height: 120px;
+}
+	.pais:hover {
+		background-image: url("/img/marcas/pais.png");
+}

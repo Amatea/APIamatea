@@ -1,0 +1,55 @@
+<admin-toolbar></admin-toolbar>
+<div layout="column" ng-cloak class="md-inline-form">
+  <md-content layout-padding md-theme="amatea-theme">
+	<h1>Insertar Noticia</h1>
+
+    <div>
+      <form name="Form">
+
+        <div layout-padding>
+
+          <md-input-container md-no-float class="md-block" >
+            <label>Titulo</label>
+            <input ng-model="noticias.titulo" required md-no-asterisk name="titulo">
+            <div ng-messages="Form.titulo.$error">
+          		<div ng-message="required">Es Requerido.</div>
+        	</div>
+          </md-input-container>
+
+		<md-input-container class="md-block" flex-gt-sm>
+            <label>Descripcion</label>
+            <input ng-model="noticias.descripcion" required md-no-asterisk name="t">
+              
+            <div ng-messages="Form.t.$error">
+          		<div ng-message="required">Es Requerido.</div>
+        	</div>
+          </md-input-container>
+
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Contenido</label>
+            <input ng-model="noticias.contenido_1"  >
+          </md-input-container>
+
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Contenido 2</label>
+            <input ng-model="noticia.contenido_2" >
+          </md-input-container>  
+		
+		<md-input-container class="md-block" flex-gt-sm>
+            <label>Contenido 3</label>
+            <input ng-model="noticia.contenido_3" >
+           
+          </md-input-container>  
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Imagen</label>
+            <input ng-model="noticia.imagen" placeholder="img/noticia/#.jpg">
+           
+          </md-input-container>  
+        
+        </div>
+        
+      </form>
+      <md-button class="md-raised md-primary md-hue-3"  ng-click="addNoticia()">Guardar</md-button>
+    </div>
+  </md-content>
+</div>

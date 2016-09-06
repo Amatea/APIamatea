@@ -1,0 +1,31 @@
+<md-card  ng-repeat="n in noticia | orderBy : '-_id'| limitTo: 1  ">
+        <div class="content3_imagen">
+			<div class="titulo">
+				<p class="content3_imagen_titulo_1">ECOS : :</p>
+				<p class="content3_imagen_titulo_2">actividades + noticias ::</p>
+			</div>
+		</div>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline"><a href="#/noticiasDetalle/{{n._id}}">{{ n.titulo }}</a></span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content hide show-gt-xs flex>
+          <p>
+            {{ n.descripcion }}
+          </p>
+          <md-button class="md-raised md-primary md-hue-3" ng-href="#/noticiasDetalle/{{n._id}}">Más Información ::</md-button>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button class="md-icon-button" aria-label="Favorite">
+            <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Settings">
+            <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Share">
+            <md-icon md-svg-icon="img/icons/share-arrow.svg"></md-icon>
+          </md-button>
+        </md-card-actions>
+      </md-card>
+<md-card>

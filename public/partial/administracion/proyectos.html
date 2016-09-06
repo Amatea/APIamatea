@@ -1,0 +1,34 @@
+
+<h2>Listado de Proyectos::</h2>
+<md-divider ></md-divider>
+<div>
+  <div>
+    <a ng-href="#/insertar_proyecto">
+        <md-button ng-click="clickCreate()">
+            <span class="glyphicon glyphicon-cloud"></span> Insertar Nuevo Registro
+        </button>
+    </a>
+  </div>
+</div>   
+<md-divider ></md-divider>
+ <md-list>
+    <table layout-padding>
+        <thead layout-padding>
+        <tr>
+            <th>Editar</th>
+            <th> Titulo</a></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="p in proyecto | orderBy : '-_id' | filter:keywords ">
+            <td>
+                <a href="#/editar_proyecto/{{p._id}}"><md-button>Editar
+                </md-button></a>
+            </td>
+            <td layout-padding>{{ p.titulo }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <hr>
+</md-list>
+    

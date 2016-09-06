@@ -1,0 +1,31 @@
+<div >
+<table class="table table-striped ">
+        <thead>
+        <tr>
+            <th> Nombre</a></th>
+            <th> Apellido</a></th>
+            <th> Correo</a></th>
+            <th> Celular</th>
+            <th> Acompañante</th>
+            <th> Transporte</th>
+            <th> Cupos</th>
+            <th> Fecha</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="usuarios in usuario | orderBy : '-_id' ">
+           
+            <td >{{ usuarios.nombre }} </td>
+            <td>{{ usuarios.apellido }}</td>
+            <td>{{ usuarios.correo }}</td>
+            <td>{{ usuarios.celular }}</td>
+            <td>{{ usuarios.acompanante }}</td>
+            <td>{{ usuarios.transporte }}</td>
+            <td>{{ usuarios.transporte_compartir }}</td>
+            <td>{{ usuarios.timestamp | date}} </td> 
+        </tr>
+        </tbody>
+    </table>
+    </div>
+    <hr>
+    <h2>Numero de Inscritos: </h2>
