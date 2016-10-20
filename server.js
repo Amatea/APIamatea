@@ -52,7 +52,7 @@ app.use('/api', donacionService);
 app.use('/services/route', passportServices);
 app.use('/api', passportFacebook);
 
-app.set('port', process.env.PORT || 8080);
+app.set('port', process.env.PORT || 3000);
 app.listen(app.get('port'));
 
-console.log("Server started on 8080");
+console.log("Server started on 3000");
