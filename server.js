@@ -44,7 +44,7 @@ app.use(passport.session());    // Add passport initialization
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
-app.use('/services/contactoroute', contactoService);
+app.use('/api', contactoService);
 app.use('/api', noticiaService);
 app.use('/api', proyectoService);
 app.use('/api', bosquesService);
