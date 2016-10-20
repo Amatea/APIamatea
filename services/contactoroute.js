@@ -13,9 +13,9 @@ router.route('/contacto').get(function(req, res) {
 });
 
 router.route('/contacto').post(function(req, res) {
-  var bosque = new Bosque(req.body);
+  var contacto = new Contacto(req.body);
 
-  bosque.save(function(err) {
+  contacto.save(function(err) {
     if (err) {
       return res.send(err);
     }
@@ -51,7 +51,7 @@ router.route('/contacto/:id').put(function(req,res){
     }
 
     for (prop in req.body) {
-      bosque[prop] = req.body[prop];
+      contacto[prop] = req.body[prop];
     }
     // save the movie
     contacto.save(function(err) {
