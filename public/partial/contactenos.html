@@ -7,42 +7,42 @@
 		    <div class="form-group">
 		        <label>Nombre:</label>
 		        <div class="texto">
-		            <input type="text" ng-model="contacto.nombre" required>
+		            <input type="text" ng-model="contactos.nombre" required>
 		        </div>
 		    </div>
 		    <div class="form-group">
 		        <label>Apellido:</label>
 		        <div class="texto">
-		            <input type="text"  ng-model="contacto.apellido"  required>
+		            <input type="text"  ng-model="contactos.apellido"  required>
 		        </div>
 		    </div>
 		    <div class="form-group">
 		        <label class="col-sm-2 control-label">Organización:</label>
 		        <div class="texto">
-		            <input type="text"  ng-model="contacto.organizacion" >
+		            <input type="text"  ng-model="contactos.organizacion" >
 		        </div>
 		    </div>
 		    <div class="form-group">
 		        <label class="col-sm-2 control-label">Celular:</label>
 		        <div class="texto">
-		            <input type="number" ng-model="contacto.celular" >
+		            <input type="number" ng-model="contactos.celular" >
 		        </div>
 		    </div>
 		    <div class="form-group">
 		        <label class="col-sm-2 control-label">Email:</label>
 		        <div class="texto">
-		            <input type="email"  ng-model="contacto.email"  required>
+		            <input type="email"  ng-model="contactos.email"  required>
 		        </div>
 		    </div>
 		    <div class="form-group">
 		        <label class="col-sm-2 control-label">Comentario:</label>
 		        <div class="texto">
-		            <textarea type="text" ng-model="contacto.comentario"></textarea>	
+		            <textarea type="text" ng-model="contactos.comentario"></textarea>	
 		        </div>
 		    </div> 
 		</form>
 			<a ng-href="#/lista_clientes">
-			<button class="btn btn-success" ng-click="submitCreate()" >
+			<button class="btn btn-success" ng-click="addContacto()" >
 			    <span class="glyphicon glyphicon-save"></span> Enviar
 			</button>
 			</a>

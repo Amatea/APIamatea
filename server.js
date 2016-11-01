@@ -44,7 +44,7 @@ app.use(passport.session());    // Add passport initialization
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
-app.use('/services/contactoroute', contactoService);
+app.use('/api', contactoService);
 app.use('/api', noticiaService);
 app.use('/api', proyectoService);
 app.use('/api', bosquesService);
@@ -52,7 +52,7 @@ app.use('/api', donacionService);
 app.use('/services/route', passportServices);
 app.use('/api', passportFacebook);
 
-app.set('port', process.env.PORT || 8080);
+app.set('port', process.env.PORT || 3000);
 app.listen(app.get('port'));
 
-console.log("Server started on 8080");
+console.log("Server started on 3000");

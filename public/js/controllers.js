@@ -1,13 +1,15 @@
 var amateaControllers = angular.module('amateaControllers', []);
 
-app.controller("contactoController", function ($http, $scope) {
-    $scope.contacto={};
-    $scope.submitCreate=  function() {
-        
-        $http.put("/services/contactoroute/agregar",$scope.contacto).success(function(response) {
-            console.log("response");
+app.controller("contactoController", function ($http, $scope, $location, Contacto) {
+    
+    $scope.contacto = Contacto.query();
 
-        });
+
+    $scope.contactos = new Contacto();
+
+    $scope.addContacto = function() {
+    $scope.contactos.$save()
+    $location.path('/');
     };
 });
 

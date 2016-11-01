@@ -23,7 +23,7 @@ app.factory('Noticia', ['$resource', function($resource){
 }]);
 
 app.factory('Contacto', ['$resource', function($resource){
-	return $resource('/services/contactoroute/:id', {id: '@_id'}, {
+	return $resource('/api/contacto/:id', {id: '@_id'}, {
 		update: { method: 'PUT'},
 		get: { method: 'GET', isArray: false},
 		show: { method: 'GET'}
