@@ -9,7 +9,8 @@ var passport 		= require('passport');
 var LocalStrategy 	= require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var favicon 		= require('serve-favicon');
-var mongoose		= require('mongoose')
+var mongoose		= require('mongoose');
+var config          = require('./config');
 
 var contactoService=require('./services/contactoroute');
 var noticiaService=require('./services/noticiaroute');
@@ -22,10 +23,7 @@ var passportFacebook=require('./services/passport');
 var app = express();
 
 //connect to our database
-var dbName = 'amateaDB';
-var connectionString = 'mongodb://localhost:27017/' + dbName;
-
-mongoose.connect(connectionString);
+mongoose.connect(config.db.conn);
 
 app.use(morgan('dev'));
 
