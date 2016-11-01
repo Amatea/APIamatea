@@ -1,0 +1,38 @@
+<md-toolbar md-theme="amatea-theme" class="md-hue-1">
+  <div class="md-toolbar-tools" >
+    <md-button class="md-icon-button" aria-label="Settings">
+      <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+    </md-button>
+    <h2>
+      <span>Conoce las Aves de Amatea::</span>
+    </h2>
+    <span flex></span>
+    <md-button class="md-icon-button" aria-label="Favorite">
+      <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+    </md-button>
+    <md-button class="md-icon-button" aria-label="More">
+      <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+    </md-button>
+  </div>
+</md-toolbar>
+<div>
+  <span>Sorprendente de la diversidad de aves del Parque Nacional Natural Farallones de Cali</span>
+</div>
+<md-grid-list
+        md-cols="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="6"
+        md-row-height-gt-md="1:1" md-row-height="4:3"
+        md-gutter="8px" md-gutter-gt-sm="4px" >
+    <md-grid-tile ng-repeat="a in ave"
+                  md-colspan-sm="1"
+                  md-colspan-xs="1"
+                  class="ave-background" >
+      <div layout="column">
+        <img ng-src="{{a.foto_macho}}" class="ave-avatar" alt="{{a.nombre_comun}}" />
+        <audio ng-src="{{a.canto | trustUrl}}" controls></audio>
+      </div>
+      <md-grid-tile-footer>
+        <h3>{{a.nombre_comun}}</h3>
+        <h4>{{ a.nombre_cientifico }}</h4>
+      </md-grid-tile-footer>
+    </md-grid-tile>
+  </md-grid-list>

@@ -41,6 +41,12 @@ app.factory('Proyecto', ['$resource', function($resource){
 
 // ---------- APIDENDROS
 
+app.filter('trustUrl', function ($sce) {
+    return function(url) {
+      return $sce.trustAsResourceUrl(url);
+    };
+});
+
 app.factory('Ave', ['$resource', function($resource){
 	return $resource('api/aves/:id', {id: '@_id'}, {
 		update: { method: 'PUT'},

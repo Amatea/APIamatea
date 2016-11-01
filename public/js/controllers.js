@@ -345,6 +345,13 @@ app.controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $log) {
     };
   });
 
+//------------------APIDENDROS
+
+app.controller('aveController', function($scope, Ave){
+  $scope.ave = Ave.query();
+  $scope.letter = 60;
+})
+
 
 
 

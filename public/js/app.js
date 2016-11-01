@@ -189,13 +189,19 @@ app.config( ['$routeProvider', '$locationProvider', '$httpProvider', function ($
           controller: 'siembraController'
         })
 
+        .when('/aves', {
+          title:'  Aves ::',
+          templateUrl: 'partial/apidendros/ave.html',
+          controller: 'aveController'
+        })
+
         .otherwise({
             redirectTo: '/'
         });
 
-    
-
 }]);
+
+//----------------------------------------
 
 app.run(['$rootScope', '$route', '$http', function($rootScope, $route, $http) {
     $rootScope.$on('$routeChangeSuccess', function() {

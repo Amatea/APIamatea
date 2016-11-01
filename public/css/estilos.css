@@ -1304,6 +1304,22 @@ h2	{
 	text-align: center;
 }
 
+/* --------------APIDENDROS--------*/
+
+.ave-avatar {
+	width: 150px;
+	height: auto;
+
+}
+
+.ave-background {
+	background-color: #004D40;
+}
+
+audio {
+	width: auto;
+}
+
 
 
 
