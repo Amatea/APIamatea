@@ -37,3 +37,14 @@ app.factory('Proyecto', ['$resource', function($resource){
 		show: { method: 'GET'}
 	})
 }]);
+
+
+// ---------- APIDENDROS
+
+app.factory('Ave', ['$resource', function($resource){
+	return $resource('api/aves/:id', {id: '@_id'}, {
+		update: { method: 'PUT'},
+		get: { method: 'GET', isArray: false},
+		show: { method: 'GET'}
+	})
+}]);
