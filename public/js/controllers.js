@@ -18,14 +18,16 @@ app.controller("noticiaController", function ($scope, $location, Noticia){
     $scope.noticias = new Noticia();
 
     $scope.addNoticia = function() {
-    $scope.noticias.$save()
-    $location.path('/admin');
+        $scope.noticias.$save()
+        $location.path('/admin');
     };
 });
 
 app.controller("noticiadetalleController", function ($scope, $location, $routeParams, Noticia){
 
-  $scope.noticia = Noticia.show({id: $routeParams._id});
+  $scope.noticia = Noticia.show({id: $routeParams._id}, function(dato){
+      console.log(dato)
+  });
 });
 
 
