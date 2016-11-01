@@ -12,6 +12,7 @@ var favicon 		= require('serve-favicon');
 var mongoose		= require('mongoose');
 var config          = require('./config');
 
+var aveService=require('./services/dendrosServices/averoute');
 var contactoService=require('./services/contactoroute');
 var noticiaService=require('./services/noticiaroute');
 var proyectoService=require('./services/proyectoroute');
@@ -49,6 +50,7 @@ app.use('/api', bosquesService);
 app.use('/api', donacionService);
 app.use('/services/route', passportServices);
 app.use('/api', passportFacebook);
+app.use('/api', aveService);
 
 app.set('port', process.env.PORT || 3000);
 app.listen(app.get('port'));
