@@ -347,9 +347,18 @@ app.controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $log) {
 
 //------------------APIDENDROS
 
-app.controller('aveController', function($scope, Ave){
+app.controller('aveController', function($scope, Ave, $routeParams){
   $scope.ave = Ave.query();
   $scope.letter = 60;
+
+})
+
+app.controller('avedetalleController', function($scope, $location, $routeParams, Ave){
+  
+  $scope.detalle = Ave.show({id: $routeParams._id}, function(dato){
+      console.log(dato)
+  });
+
 })
 
 

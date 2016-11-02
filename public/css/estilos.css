@@ -3,10 +3,6 @@
   src: url("/fonts/OpenSans-Regular.ttf");
  }
 
-a {
-
-	
-}
 
 a:hover {
 	color: #114948;
@@ -1320,6 +1316,12 @@ audio {
 	width: 194px;
 }
 
+.bird {
+	width: 33px;
+}
 
+.pajaro {
+	width: 260px;
+}
 
 

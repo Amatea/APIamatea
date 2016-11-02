@@ -3,10 +3,6 @@ var Ave = require('../../dbconection/apidendrosDB/avesconection.js');
 
 var averouter = express.Router();
 
-averouter.use(function(req,res,next){
-    console.log('something is happening');
-    next();
-});
 
 averouter.route('/aves')
   .get(function(req, res) {

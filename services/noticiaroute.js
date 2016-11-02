@@ -3,7 +3,7 @@ var express = require('express');
 var router = express.Router();
 
 router.route('/noticia').get(function(req, res) {
-  Noticia.find(function(err, bosques) {
+  Noticia.find(function(err, noticias) {
     if (err) {
       return res.send(err);
     }

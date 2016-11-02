@@ -6,7 +6,8 @@ var app = angular.module('App', [
   'amateaServices',
   'leaflet-directive',
   'ngMaterial', 
-  'ngMessages'
+  'ngMessages',
+  'angular-svg-round-progressbar'
   ])
     
 
@@ -193,6 +194,12 @@ app.config( ['$routeProvider', '$locationProvider', '$httpProvider', function ($
           title:'  Aves ::',
           templateUrl: 'partial/apidendros/ave.html',
           controller: 'aveController'
+        })
+
+        .when('/avedetalle/:id', {
+          title:'  Aves ::',
+          templateUrl: 'partial/apidendros/avedetalle.html',
+          controller: 'avedetalleController'
         })
 
         .otherwise({
