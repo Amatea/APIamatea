@@ -1,4 +1,25 @@
-<div>
-  hola
-  {{ave.nombre_comun}}
+<div layout="column" layout-align="center center">
+	<h2 >{{ave.nombre_comun}}</h2>
+	<div >
+		<img class="imagenAve" src="{{ave.foto_macho}}" alt="">
+	</div>
+	<div layout="row">
+		<div flex>	
+			<p>Fotografo:: {{ave.fotografo}}</p>
+		</div>
+	
+	<div flex>
+		<h3>Escucha el Canto ::</h3>
+		<audio ng-src="{{ave.canto | trustUrl}}"  controls></audio>
+	</div>
+	</div>
+	<p>Nombre Cientifico:: {{ave.nombre_cientifico }}</p>
+	<p>nombre ingles:: {{ave.nombre_ingles }}</p>
+	<p>Familia:: {{ave.familia}}</p>
+	<p>Rango altitudinal: {{ave.rango_altura}}</p>
+	<p>Habitat: {{ave.habitat}}</p>
+	<p>Descripcion: {{ave.descripcion_ave}}</p>
+	<p>Estado de conservacion: {{ave.estado_conservacion}}</p>
+	<p>Actividad del Ave: {{ave.actividad_ave}}</p>
+	<p>Coordenada:: {{ave.coordenada}}</p>
 </div>

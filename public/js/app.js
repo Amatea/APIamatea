@@ -196,7 +196,7 @@ app.config( ['$routeProvider', '$locationProvider', '$httpProvider', function ($
           controller: 'aveController'
         })
 
-        .when('/avedetalle/:id', {
+        .when('/avesdetalle/:id', {
           title:'  Aves ::',
           templateUrl: 'partial/apidendros/avedetalle.html',
           controller: 'avedetalleController'

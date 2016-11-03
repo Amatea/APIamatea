@@ -1324,4 +1324,6 @@ audio {
 	width: 260px;
 }
 
-
+.imagenAve {
+	max-width: 100%;
+}
