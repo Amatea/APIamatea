@@ -355,10 +355,9 @@ app.controller('aveController', function($scope, Ave, $routeParams){
 
 app.controller('avedetalleController', function($scope, $location, $routeParams, Ave){
   
-  $scope.detalle = Ave.show({id: $routeParams._id}, function(dato){
+  $scope.ave = Ave.show({id: $routeParams.id}, function(dato){
       console.log(dato)
-  });
-
+    });
 })
 
 

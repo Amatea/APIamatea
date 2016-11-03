@@ -50,7 +50,7 @@ app.filter('trustUrl', function ($sce) {
 app.factory('Ave', ['$resource', function($resource){
 	return $resource('api/aves/:id', {id: '@_id'}, {
 		update: { method: 'PUT'},
-		get: { method: 'GET', isArray: true},
-		show: { method: 'GET', isArray: false}
+		get: { method: 'GET', isArray: false},
+		show: { method: 'GET'}
 	})
 }]);
