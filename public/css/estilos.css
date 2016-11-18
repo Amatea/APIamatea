@@ -1334,3 +1334,10 @@ audio {
 .logos-apoyo-pnn{
 	width: 150px;
 }
+
+.canto {
+	border: solid green 1px;
+	border-radius: 10px;
+	padding: 10px;
+	margin-top: 20px;
+}

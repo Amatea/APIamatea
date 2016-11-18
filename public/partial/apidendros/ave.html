@@ -40,8 +40,18 @@
           <audio ng-src="{{a.canto | trustUrl}}" controls></audio>
         </div>
         <a href="#/avesdetalle/{{a._id}}"><md-grid-tile-footer>
-          <h3>{{a.nombre_comun}}</h3>
-          <h4>{{ a.nombre_cientifico }}</h4>
+          <div layout="row" layout-margin layout-align="center center">
+            <div >
+              <i class="fa fa-plus" aria-hidden="true"></i>
+            </div>
+            <div>
+              <h3>{{a.nombre_comun}}</h3>
+              <h4>{{ a.nombre_cientifico }}</h4>
+            </div>
+          </div>
+          
+          
+          
         </md-grid-tile-footer></a>
       </md-grid-tile>
   </md-grid-list>

@@ -4,28 +4,48 @@
 		<div>
 			<img class="imagenAve" src="{{ave.foto_macho}}" alt="">
 		</div>
-		<div layout-margin>	
-			<small>Fotografo:: {{ave.fotografo}}</small>
+		<div layout="row">
+			<div layout-margin flex>	
+				<small>Fotografo:: {{ave.fotografo}}</small>
+			</div>
+			<div layout-margin>
+				<small>Estado de conservación: {{ave.estado_conservacion}}</small>
+			</div>
 		</div>
 	</div>
 
 	<div layout="row">
-
 		<div flex>
-			<div layout="column" layout-align="center center">
+			<div layout="column" layout-align="center center" class="canto">
 				<h2>Escucha el Canto ::</h2>
 				<audio ng-src="{{ave.canto | trustUrl}}"  controls></audio>
 			</div>
-			
 		</div>
 	</div>
-	<p>Nombre Cientifico:: {{ave.nombre_cientifico }}</p>
-	<p>nombre ingles:: {{ave.nombre_ingles }}</p>
-	<p>Familia:: {{ave.familia}}</p>
-	<p>Rango altitudinal: {{ave.rango_altura}}</p>
-	<p>Habitat: {{ave.habitat}}</p>
-	<p>Descripcion: {{ave.descripcion_ave}}</p>
-	<p>Estado de conservacion: {{ave.estado_conservacion}}</p>
-	<p>Actividad del Ave: {{ave.actividad_ave}}</p>
-	<p>Coordenada:: {{ave.coordenada}}</p>
+	<div >
+		<h3>Nombre Científico:: {{ave.nombre_cientifico }}</h3>
+		<h3>Nombre ingles:: {{ave.nombre_ingles }}</h3>
+		<h3>Familia:: {{ave.familia}}</h3>
+	</div>
+	<div div layout-margin>
+		<p>Descripción: {{ave.descripcion_ave}}</p>
+	</div>
+	<div layout-margin>
+		<p>Actividad del Ave: {{ave.actividad_ave}}</p>
+	</div>
+	<div layout-margin>
+		<p>Habitat: {{ave.habitat}}</p>
+		<p>Rango altitudinal: {{ave.rango_altura}}</p>
+	</div>
+</div>
+<md-button class="md-raised md-primary" ng-href="#/aves">Regresar</md-button>
+<hr>
+<div layout="row" layout-xs="column" layout-margin layout-align-xs="center center">
+	<h2>Con el apoyo:</h2>
+	<div flex>
+		<img class="logos-apoyo-pnn"src="img/logo parques.jpg" alt="parques">
+	</div>
+	<div flex>
+		<img class="logos-apoyo" src="img/Rio Cali Logo.jpg" alt="riocali">
+	</div>
 </div>
