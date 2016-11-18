@@ -1,17 +1,23 @@
 <div layout="column" layout-align="center center">
-	<h2 >{{ave.nombre_comun}}</h2>
-	<div >
-		<img class="imagenAve" src="{{ave.foto_macho}}" alt="">
-	</div>
-	<div layout="row">
-		<div flex>	
-			<p>Fotografo:: {{ave.fotografo}}</p>
+	<h2>{{ave.nombre_comun}}</h2>
+	<div>
+		<div>
+			<img class="imagenAve" src="{{ave.foto_macho}}" alt="">
 		</div>
-	
-	<div flex>
-		<h3>Escucha el Canto ::</h3>
-		<audio ng-src="{{ave.canto | trustUrl}}"  controls></audio>
+		<div layout-margin>	
+			<small>Fotografo:: {{ave.fotografo}}</small>
+		</div>
 	</div>
+
+	<div layout="row">
+
+		<div flex>
+			<div layout="column" layout-align="center center">
+				<h2>Escucha el Canto ::</h2>
+				<audio ng-src="{{ave.canto | trustUrl}}"  controls></audio>
+			</div>
+			
+		</div>
 	</div>
 	<p>Nombre Cientifico:: {{ave.nombre_cientifico }}</p>
 	<p>nombre ingles:: {{ave.nombre_ingles }}</p>
