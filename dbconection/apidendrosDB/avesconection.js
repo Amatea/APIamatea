@@ -18,6 +18,7 @@ var AveSchema = {
   actividad_ave: String,
   coordenada: String,
   canto: String,
+  thumbUrl: String,
   foto_macho: String,
   foto_hembra: String,
   foto1: String,

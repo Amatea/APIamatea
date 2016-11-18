@@ -36,7 +36,7 @@
                     md-colspan-xs="1"
                     class="ave-background" >
         <div layout="column" layout-align="">
-          <img ng-src="{{a.foto_macho}}" class="ave-avatar" alt="{{a.nombre_comun}}" />
+          <img ng-src="{{a.thumbUrl}}" class="ave-avatar" alt="{{a.nombre_comun}}" />
           <audio ng-src="{{a.canto | trustUrl}}" controls></audio>
         </div>
         <a href="#/avesdetalle/{{a._id}}"><md-grid-tile-footer>
