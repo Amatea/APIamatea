@@ -11,8 +11,12 @@ var FacebookStrategy = require('passport-facebook').Strategy;
 var favicon 		= require('serve-favicon');
 var mongoose		= require('mongoose');
 var config          = require('./config');
+const chalk         = require('chalk');
+const dotenv        = require('dotenv');
 
-var aveService=require('./services/dendrosServices/averoute');
+dotenv.load({ path: '.env.eco' });
+
+
 var contactoService=require('./services/contactoroute');
 var noticiaService=require('./services/noticiaroute');
 var proyectoService=require('./services/proyectoroute');
@@ -21,11 +25,19 @@ var donacionService=require('./services/donacionroute');
 var passportServices=require('./services/route');
 var passportFacebook=require('./services/passport');
 
+/**
+ * Connect to MongoDB.
+ */
+mongoose.Promise = global.Promise;
+mongoose.connect(process.env.MONGODB_URI || process.env.MONGOLAB_URI);
+mongoose.connection.on('error', () => {
+  console.log('%s MongoDB connection error. Please make sure MongoDB is running.', chalk.red('✗'));
+  process.exit();
+});
+
 var app = express();
 
-//connect to our database
-mongoose.connect(config.db.conn);
-
+app.set('port', process.env.PORT || 3000);
 app.use(morgan('dev'));
 
 app.use(cookieParser());
@@ -50,9 +62,9 @@ app.use('/api', bosquesService);
 app.use('/api', donacionService);
 app.use('/services/route', passportServices);
 app.use('/api', passportFacebook);
-app.use('/api', aveService);
 
-app.set('port', process.env.PORT || 3000);
-app.listen(app.get('port'));
 
-console.log("Server started on 3000");
+app.listen(app.get('port'), () => {
+  console.log('%s App is running at http://localhost:%d in %s mode', chalk.blue('✓'), app.get('port'), app.get('env')); 
+  console.log('  Press CTRL-C to stop\n');
+});
