@@ -1,4 +1,4 @@
-var amateaControllers = angular.module('amateaControllers', []);
+var app = angular.module('amateaControllers', []);
 
 app.controller("contactoController", function ($http, $scope, $location, Contacto) {
     

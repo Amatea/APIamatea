@@ -1,4 +1,4 @@
-var app = angular.module('App', [
+var App = angular.module('App', [
   'ngRoute',
   'ngResource',
   'amateaControllers',
@@ -11,7 +11,7 @@ var app = angular.module('App', [
   ])
     
 
-app.config( ['$routeProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $locationProvider, $httpProvider ) {
+App.config( ['$routeProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $locationProvider, $httpProvider ) {
     
     //================================================
     // Check if the user is connected
@@ -210,7 +210,7 @@ app.config( ['$routeProvider', '$locationProvider', '$httpProvider', function ($
 
 //----------------------------------------
 
-app.run(['$rootScope', '$route', '$http', function($rootScope, $route, $http) {
+App.run(['$rootScope', '$route', '$http', function($rootScope, $route, $http) {
     $rootScope.$on('$routeChangeSuccess', function() {
         document.title = $route.current.title;
     });
@@ -225,7 +225,7 @@ app.run(['$rootScope', '$route', '$http', function($rootScope, $route, $http) {
 
 }]);
 
-app.config(function($mdThemingProvider) {
+App.config(function($mdThemingProvider) {
     // Configure a dark theme with primary foreground yellow
     $mdThemingProvider.theme('docs-dark', 'default')
       .primaryPalette('light-green')
