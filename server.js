@@ -1,29 +1,30 @@
-var express = require('express');
-var path = require('path');
-var bodyParser = require('body-parser');
-var morgan    		= require('morgan');
-var cookieParser 	= require('cookie-parser');
-var session   		= require('express-session');
-var methodOverride 	= require('method-override');
-var passport 		= require('passport');
-var LocalStrategy 	= require('passport-local').Strategy;
-var FacebookStrategy = require('passport-facebook').Strategy;
-var favicon 		= require('serve-favicon');
-var mongoose		= require('mongoose');
-var config          = require('./config');
+const express = require('express');
+const path = require('path');
+const bodyParser = require('body-parser');
+const morgan    		= require('morgan');
+const cookieParser 	= require('cookie-parser');
+const session   		= require('express-session');
+const methodOverride 	= require('method-override');
+const passport 		= require('passport');
+const LocalStrategy 	= require('passport-local').Strategy;
+const FacebookStrategy = require('passport-facebook').Strategy;
+const favicon 		= require('serve-favicon');
+const mongoose		= require('mongoose');
+const config          = require('./config');
 const chalk         = require('chalk');
 const dotenv        = require('dotenv');
 
 dotenv.load({ path: '.env.eco' });
 
+const homeController = require('./controllers/home'); 
 
-var contactoService=require('./services/contactoroute');
-var noticiaService=require('./services/noticiaroute');
-var proyectoService=require('./services/proyectoroute');
-var bosquesService=require('./services/bosqueroute');
-var donacionService=require('./services/donacionroute');
-var passportServices=require('./services/route');
-var passportFacebook=require('./services/passport');
+const contactoService=require('./services/contactoroute');
+const noticiaService=require('./services/noticiaroute');
+const proyectoService=require('./services/proyectoroute');
+const bosquesService=require('./services/bosqueroute');
+const donacionService=require('./services/donacionroute');
+const passportServices=require('./services/route');
+const passportFacebook=require('./services/passport');
 
 /**
  * Connect to MongoDB.
@@ -64,9 +65,8 @@ app.use('/api', donacionService);
 app.use('/services/route', passportServices);
 app.use('/api', passportFacebook);
 
-app.get('/bosquesparavolar', (req, res) => {
-  res.send('hello aves para sembrar')
-});
+app.get('/bosquesparavolar', homeController.index);
+app.post('/bosquesparavolar', homeController.inscripcion);
 
 
 app.listen(app.get('port'), () => {

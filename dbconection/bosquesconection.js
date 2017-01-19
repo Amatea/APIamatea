@@ -9,7 +9,8 @@ var bosqueSchema = new Schema({
   acompanante: String,
   transporte: String,
   transporte_compartir: String,
-  timestamp: Date,
+  timestamp: { type: Date, default: Date.now },
+  evento: { type: String, default: 'bosques volar enero'}
 });
 
 module.exports = mongoose.model('Bosque', bosqueSchema);

@@ -2,21 +2,47 @@ extends layout
 
 block content
 
+  nav.lime.darken-2
+    .nav-wrapper
+      ul#nav-mobile.right
+        li
+          a(href='sass.html') Amatea.org
+
   section.siembra_bosques
-  h1
+  h1.teal-text.text-darken-1
     | BOSQUES PARA VOLAR ::
-  div
-    p Vive la Experiencia de sincronizarte con la naturaleza
-  h3
-    a(href='http://amatea.org/#/bosquesparavolar')  Inscríbete Aqui :: 
-    h2 Inscribete hasta el 20 de abril!!
-    h2 Organizan ::
-    div
-      p
-        img(src='../img/birdfair_2016.png', height='200px', alt='')
-      p
+  div.teal-text.text-darken-1
+    h4 Vive la Experiencia de sincronizarte con la naturaleza
+  
+  div.caja
+    h2.teal-text.text-darken-1 Inscribete::
+  
+  .row
+  form.col.s12(method='POST')
+    .row
+      .input-field.col.s12
+        input#first_name.validate(type='text' name='nombre')
+        label(for='nombre') Nombre
+      .input-field.col.s12
+        input#last_name.validate(type='text' name='apellido')
+        label(for='apellido') Apellido
+    .row
+      .input-field.col.s12
+        input#email.validate(type='email' name='correo')
+        label(for='correo') Email
+        button.btn.btn-success(type='submit')
+          i.fa.fa-send
+          | Enviar
+    
+  div.caja
+    h3.teal-text.text-darken-1 Organizan ::
+    div.row.center-align
+      div.col
+        p
+          img(src='../img/birdfair_2016.png', height='200px', alt='')
+      div.col
+        p
         img(src='../img/logo parques.jpg', height='150px', alt='')
-      p
-        img(src='../img/Rio Cali Logo.jpg', height='150px', alt='')
-      p
-        img(src='../img/logo_amatea_2016.jpg', height='100px', alt='')
+      div.col
+        p
+          img(src='../img/logo_amatea_2016.jpg', height='100px', alt='')

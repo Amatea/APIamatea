@@ -4,7 +4,6 @@ html(ng-app='App')
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name="viewport" content='width=device-width, initial-scale=1, maximum-scale=1')
-    meta(name='csrf-token', content=_csrf)
     link(href='https://fonts.googleapis.com/css?family=Amatic+SC|News+Cycle', rel='stylesheet')
     link(rel='stylesheet', href='https://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.css')
     link(rel='stylesheet', href='	https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css')
@@ -13,41 +12,19 @@ html(ng-app='App')
     
     title #{title} - Amateapp
 
-    
-    link(rel='stylesheet', type='text/css', href='/css/app.css')
-    link(rel='stylesheet', type='text/css', href='/css/leaflet.css')
+    link(rel='stylesheet', type='text/css', href='/css/estilos.css')
+    link(rel='stylesheet', type='text/css', href='/js/materialize/materialize.css')
     
 
   body
     #wrap
       .container
-        include partials/flash
         block content
     
     
-    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js')
-    script(src='https://code.angularjs.org/1.4.4/angular-resource.js')
-    script(src='https://code.angularjs.org/1.4.4/angular-route.js')
-    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-resource.js')
-    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-messages.min.js')
-    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-animate.min.js')
-    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-aria.min.js')
-    script(src='https://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/locale/es.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.0-beta.6/angular-moment.min.js')
-
-    script(type='text/javascript', src='/services/huellaService.js')
-    script(type='text/javascript', src='/directives/huellaDirective.js')
-    script(type='text/javascript', src='/controllers/timeController.js')
-    script(type='text/javascript', src='/controllers/huellaController.js')
-    script(type='text/javascript', src='/controllers/consumoController.js')
-    script(type='text/javascript', src='/controllers/transporteController.js')
-    script(type='text/javascript', src='/controllers/vidaController.js')
-    script(type='text/javascript', src='/controllers/calculoController.js')
-    script(type='text/javascript', src='/controllers/leaftController.js')
-    script(type='text/javascript', src='/controllers/treebirdsController.js')
-    script(type='text/javascript', src='/application.js')
+    script(type='text/javascript', src='/js/materialize/materialize.js')
     script(type='text/javascript', src='/js/roundProgress.js')
     script(type='text/javascript', src='/js/navigation.js')
     script(type='text/javascript', src='/js/leaflet.js')
