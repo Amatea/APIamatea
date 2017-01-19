@@ -64,6 +64,10 @@ app.use('/api', donacionService);
 app.use('/services/route', passportServices);
 app.use('/api', passportFacebook);
 
+app.get('/bosquesparavolar', (req, res) => {
+  res.send('hello aves para sembrar')
+});
+
 
 app.listen(app.get('port'), () => {
   console.log('%s App is running at http://localhost:%d in %s mode', chalk.blue('✓'), app.get('port'), app.get('env')); 
