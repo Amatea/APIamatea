@@ -35,6 +35,13 @@ var amateaDirectives = angular.module('amateaDirectives', []);
 		};
 	});
 
+	amateaDirectives.directive('amateaBosques', function() {
+		return {
+			restrict: 'E',
+			templateUrl: '/partial/contenido/amatea-bosques.html',
+		};
+	});
+
 	amateaDirectives.directive('amateaMarcas', function() {
 		return {
 			restrict: 'E',
