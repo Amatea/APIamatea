@@ -39,8 +39,20 @@ exports.inscripcion = (req, res, next) => {
         to: user.correo,
         from: 'amatea@amatea.org',
         subject: 'Bosques para Volar',
-        html: '<h2>' + 'Hola '+ user.nombre + '</h2>'+ `Gracias por inscribirte.\n` + 'En breve estaremos enviandote más información.\n\n'
-              + '<h3> Gracias por contribuir a la armonía del Ser con la Naturaleza </h3>'
+        html: '<h2>' + 'Hola '+ user.nombre + '</h2>'+ `Gracias por inscribirte.\n` + 
+        'Te recordamos que antes de llegar al punto de encuentro, debes haber cancelado el valor de la actividad.<br>' +
+        'La inscripción incluye: Transporte, Refrigerio, Caminata avistamiento de Aves - interpretación ambiental - Arbol.\n' +
+        '<a href="https://checkout.payulatam.com/ppp-web-gateway-payu/app/v2?k=fd8864e992530b2d765863c2f0265ded#/co/buyer"><h2>Realiza tu Pago<h2></a>\n\n' +
+        '<h1>Siembra de Arboles Domingo 29</h1>\n\n' +
+        'Punto de Encuentro: Parque del Perro.<br>' + 
+        'Hora: 7:30 am.<br>' +
+        'Lugar de la actividad: Vereda el Faro, PNN Farallones de Cali, Area de Restauración Ecológica Amatea.\n\n' +
+        '<h2>Actividades:</h2>\n' +
+        '1. Charla - Introducción.<br>' + '2. Caminata Ecológica (recorrido suave por senderos apto para todo publico).<br>' +
+        '3. Actividad de conexión con la naturaleza.<br>' + '4. Siembra de Arboles.<br>' + '5. Refrigerio.<br>' + '6. Regreso<br><br>' +
+        'Cualquier duda puedes escribirnos a este correo o comunicarte con Beatriz Guevara, Cel : 3128959947<br><br>' +
+        'Gracias, te esperamos!!\n\n' +
+        '<h3> Gracias por contribuir a la armonía del Ser con la Naturaleza </h3>'
       };
       transporter.sendMail(mailOptions, function(err){
         done(err);
