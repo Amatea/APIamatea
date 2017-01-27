@@ -204,7 +204,12 @@ App.config( ['$routeProvider', '$locationProvider', '$httpProvider', function ($
 
         .otherwise({
             redirectTo: '/'
-        });
+        })
+
+        .when('/pagos', {
+          title:'  Pago ::',
+          templateUrl: 'partial/pagos.html'
+        })
 
 }]);
 
