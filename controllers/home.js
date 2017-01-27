@@ -42,7 +42,7 @@ exports.inscripcion = (req, res, next) => {
         html: '<h2>' + 'Hola '+ user.nombre + '</h2>'+ `Gracias por inscribirte.\n` + 
         'Te recordamos que antes de llegar al punto de encuentro, debes haber cancelado el valor de la actividad.<br>' +
         'La inscripción incluye: Transporte, Refrigerio, Caminata avistamiento de Aves - interpretación ambiental - Arbol.\n' +
-        '<a href="https://checkout.payulatam.com/ppp-web-gateway-payu/app/v2?k=fd8864e992530b2d765863c2f0265ded#/co/buyer"><h2>Realiza tu Pago<h2></a>\n\n' +
+        '<a href="https://amatea.org/#/pagos"><h2>Realiza tu Pago<h2></a>\n\n' +
         '<h1>Siembra de Arboles Domingo 29</h1>\n\n' +
         'Punto de Encuentro: Parque del Perro.<br>' + 
         'Hora: 7:30 am.<br>' +
