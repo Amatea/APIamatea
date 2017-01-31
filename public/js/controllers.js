@@ -11,6 +11,25 @@ app.controller("contactoController", function ($http, $scope, $location, Contact
     $scope.contactos.$save()
     $location.path('/');
     };
+
+    $scope.postData = {};
+
+    $scope.postMail = function (contacto) { // parametro debe serigual al $scope de los datos (contacto)
+     
+     
+      // wrap all your input values in $scope.postData
+      $scope.postData = angular.copy(contacto);
+
+      $http.post('api/mail_contacto', $scope.postData)
+        .success(function(data) {
+          // Show success message
+        })
+        .error(function(data) {
+          // Show error message
+        });
+    };
+
+
 });
 
 app.controller("noticiaController", function ($scope, $location, Noticia){

@@ -25,12 +25,13 @@ const bosquesService=require('./services/bosqueroute');
 const donacionService=require('./services/donacionroute');
 const passportServices=require('./services/route');
 const passportFacebook=require('./services/passport');
+const mailService = require('./services/nodemail');
 
 /**
  * Connect to MongoDB.
  */
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || process.env.MONGODB_URILO);
+mongoose.connect(process.env.MONGODB_URI);
 mongoose.connection.on('error', () => {
   console.log('%s MongoDB connection error. Please make sure MongoDB is running.', chalk.red('✗'));
   process.exit();
@@ -64,6 +65,8 @@ app.use('/api', bosquesService);
 app.use('/api', donacionService);
 app.use('/services/route', passportServices);
 app.use('/api', passportFacebook);
+
+app.use('/api', mailService);
 
 app.get('/bosquesparavolar', homeController.index);
 app.post('/bosquesparavolar', homeController.inscripcion);
