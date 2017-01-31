@@ -87,6 +87,18 @@ app.controller('footerCtrl', function($scope, $mdDialog, $mdMedia, Donacion){
     $scope.donacion.$save() 
     };
 
+    $scope.postData = {};
+    $scope.postMail = function (donacion) { // parametro debe serigual al $scope de los datos (contacto)
+      // wrap all your input values in $scope.postData
+      $scope.postData = angular.copy(donacion);
+
+      $http.post('api/mail_donacion', $scope.postData)
+        .success(function(data) {
+        })
+        .error(function(data) {
+        });
+    };
+
 
     $scope.status = '  ';
   $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');

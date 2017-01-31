@@ -22,7 +22,7 @@
 							</div>
 						</md-input-container>
 					</form>
-						<md-button class="md-raised md-primary" ng-disabled="form.$invalid" ng-click="addDonacion(); showAlert($event)">Enviar</md-button> 
+						<md-button class="md-raised md-primary" ng-disabled="form.$invalid" ng-click="addDonacion(); showAlert($event); postMail(donacion);">Enviar</md-button> 
 				</div>
 				
 				<div layout-margin>
