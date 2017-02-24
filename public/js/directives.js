@@ -49,6 +49,13 @@ var amateaDirectives = angular.module('amateaDirectives', []);
 		};
 	});
 
+	amateaDirectives.directive('amateaEventos', function() {
+		return {
+			restrict: 'E',
+			templateUrl: '/partial/contenido/amatea-eventos.html',
+		};
+	});
+
 	amateaDirectives.directive('amateaMarcas', function() {
 		return {
 			restrict: 'E',

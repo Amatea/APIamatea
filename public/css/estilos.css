@@ -1360,6 +1360,7 @@ audio {
 
 .somos p {
 	color: #263238;
+	font-size: 1.2em;
 }
 
 .cont {
@@ -1374,7 +1375,22 @@ audio {
 
 	.somos {
 		height: 400px;
-		
 	}
+}
 
+.cont_event {
+	color: #263238;
+	border-radius: 10px;
+	border: solid #263238 1px;
+	padding: 12px;
+	height: 240px;
+}
+
+.even {
+	margin-top: 60px;
+	margin-bottom: 50px;
+}
+
+.even_info {
+	height: 80px;
 }
