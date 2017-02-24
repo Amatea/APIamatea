@@ -42,6 +42,13 @@ var amateaDirectives = angular.module('amateaDirectives', []);
 		};
 	});
 
+	amateaDirectives.directive('amateaSomos', function() {
+		return {
+			restrict: 'E',
+			templateUrl: '/partial/contenido/amatea-somoshuella.html',
+		};
+	});
+
 	amateaDirectives.directive('amateaMarcas', function() {
 		return {
 			restrict: 'E',

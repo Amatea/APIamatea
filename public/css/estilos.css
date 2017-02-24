@@ -1345,3 +1345,36 @@ audio {
 .caja {
 	margin-top: 100px;
 }
+/* ------- Somos Huella--------- */
+
+.somos{
+	background-image: url("/img/somos3.jpg");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 100%;
+}
+
+.somos h1 {
+	color: #263238;
+}
+
+.somos p {
+	color: #263238;
+}
+
+.cont {
+	color: #263238;
+	
+	border-radius: 10px;
+	border: solid green 1px;
+	padding: 12px;
+}
+
+@media screen and (min-width:768px){
+
+	.somos {
+		height: 400px;
+		
+	}
+
+}
