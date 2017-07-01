@@ -313,8 +313,12 @@ app.controller('siembraController', function($scope, $location, Donacion){
 
 })
 
-app.controller("proyectoController", function ($scope ,$http, Proyecto){
+app.controller("proyectoController", function ($scope ,$http, Proyecto, $translate){
     $scope.proyecto = Proyecto.query();
+
+    $scope.changeLanguage = function (langKey) {
+    $translate.use(langKey);
+  };
 });
 
 // ---------Toolbar angular material

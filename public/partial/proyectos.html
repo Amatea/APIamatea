@@ -1,8 +1,10 @@
-
+<button ng-click="changeLanguage('es')" translate="BUTTON_LANG_ES"></button>
+      <button ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN"></button>
 <md-content layout-padding>
-	<h1 >Proyectos ::</h1>
-	<span class="md-title">Principales proyectos ejecutados</span>
+	<h1 >{{ 'projects.HEADLINE' | translate }}</h1>
+	<span class="md-title">{{ 'projects.PARAGRAPH' | translate }}</span>
 </md-content>
+
 <div class="md-padding" layout-xs="column" layout-sm="column" layout-md="column" layout="row">
 	<div ng-repeat="p in proyecto" >
 	  <md-content>
@@ -13,7 +15,7 @@
           </md-card-avatar>
           <md-card-header-text>
             <span class="md-title">Ubicación:: {{p.location}}</span>
-            <span class="md-subhead">{{p.id}}</span>
+            <span class="md-subhead">{{p.id | translate}}</span>
           </md-card-header-text>
         </md-card-header>
 
@@ -21,13 +23,13 @@
         	
 
         	<md-card-title layout="row" layout-xs="column" >
-        		<md-card-title-media flex>
+        		<!--<md-card-title-media flex>
             		<img ng-src="{{proyecto.imagen}}" class="md-card-image" alt="Washed Out">
-          		</md-card-title-media>
+          		</md-card-title-media>-->
 		        
 		          <md-card-title-text layout-margin>
-		            <span class="md-headline">{{p.name}}</span>
-		            <span class="md-subhead">Objetivo:: {{proyecto.objetivo}}</span>
+		            <span class="md-headline">{{p.name }}</span>
+		            <span class="md-subhead">Objetivo:: {{p.objetive }}</span>
 	          	  </md-card-title-text>
 	            </md-card-title>
 	        </md-card-content>
@@ -35,6 +37,9 @@
 	        <md-card-content>
 	          <p>
 	            Descripcion:: {{p.description}}
+	          </p>
+						<p>
+	            Financiado por: {{p.sponsor}}
 	          </p>
 	        
 	        <md-card-actions >

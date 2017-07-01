@@ -7,7 +7,8 @@ var App = angular.module('App', [
   'leaflet-directive',
   'ngMaterial', 
   'ngMessages',
-  'angular-svg-round-progressbar'
+  'angular-svg-round-progressbar',
+  'pascalprecht.translate'
   ])
     
 
@@ -89,9 +90,19 @@ App.config(function($mdThemingProvider) {
     $mdThemingProvider.theme('default')
       .primaryPalette('light-green')
       .accentPalette('orange');
-      
     
-
 });
+
+
+App.config(['$translateProvider', function ($translateProvider) {
+
+  $translateProvider.useStaticFilesLoader({
+      'prefix': 'locale-',
+      'suffix': '.json'
+  });
+  
+  $translateProvider.preferredLanguage('es');
+  $translateProvider.forceAsyncReload(true);
+}]);
 
 
