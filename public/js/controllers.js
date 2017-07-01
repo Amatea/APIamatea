@@ -315,14 +315,6 @@ app.controller('siembraController', function($scope, $location, Donacion){
 
 app.controller("proyectoController", function ($scope ,$http, Proyecto){
     $scope.proyecto = Proyecto.query();
-
-
-    $scope.proyectos = new Proyecto();
-
-    $scope.addProyecto = function() {
-    $scope.proyectos.$save()
-    $location.path('/admin');
-    };
 });
 
 // ---------Toolbar angular material

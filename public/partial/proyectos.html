@@ -4,7 +4,7 @@
 	<span class="md-title">Principales proyectos ejecutados</span>
 </md-content>
 <div class="md-padding" layout-xs="column" layout-sm="column" layout-md="column" layout="row">
-	<div ng-repeat="proyecto in proyecto" >
+	<div ng-repeat="p in proyecto" >
 	  <md-content>
 	      <md-card flex>
 	      <md-card-header>
@@ -12,8 +12,8 @@
             <img src="img/logo_ubi.jpg"/>
           </md-card-avatar>
           <md-card-header-text>
-            <span class="md-title">Ubicación::</span>
-            <span class="md-subhead">{{proyecto.ubicacion}}</span>
+            <span class="md-title">Ubicación:: {{p.location}}</span>
+            <span class="md-subhead">{{p.id}}</span>
           </md-card-header-text>
         </md-card-header>
 
@@ -26,7 +26,7 @@
           		</md-card-title-media>
 		        
 		          <md-card-title-text layout-margin>
-		            <span class="md-headline">{{proyecto.titulo}}</span>
+		            <span class="md-headline">{{p.name}}</span>
 		            <span class="md-subhead">Objetivo:: {{proyecto.objetivo}}</span>
 	          	  </md-card-title-text>
 	            </md-card-title>
@@ -34,7 +34,7 @@
 	        <md-content>
 	        <md-card-content>
 	          <p>
-	            Descripcion:: {{proyecto.descripcion}}
+	            Descripcion:: {{p.description}}
 	          </p>
 	        
 	        <md-card-actions >
@@ -42,7 +42,7 @@
 	          <md-card-title-text layout="row">
 	          <span class="md-subhead" layout-margin>Periodo::</span>
 	      
-	          	<span class="md-subhead" layout-margin>{{proyecto.fecha2 | date}}</span>
+	          	<span class="md-subhead" layout-margin>{{p.period}}</span>
 	          	
 	          </md-card-title-text>
 	        

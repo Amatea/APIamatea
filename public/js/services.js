@@ -31,7 +31,7 @@ app.factory('Contacto', ['$resource', function($resource){
 }]);
 
 app.factory('Proyecto', ['$resource', function($resource){
-	return $resource('api/proyectos/:id', {id: '@_id'}, {
+	return $resource('projects.json/:id', {id: '@id'}, {
 		update: { method: 'PUT'},
 		get: { method: 'GET', isArray: false},
 		show: { method: 'GET'}
