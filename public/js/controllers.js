@@ -248,39 +248,39 @@ app.controller('restauracionController', function($scope, leafletData){
 
 // ---------Administrador
 
-app.controller('AdminCtrl', function($scope, $http) {
-  // List of users got from the server
-  $scope.users = [];
+// app.controller('AdminCtrl', function($scope, $http) {
+//   // List of users got from the server
+//   $scope.users = [];
 
-  // Fill the array to display it in the page
-  $http.get('/services/route/users').success(function(users){
-    for (var i in users)
-      $scope.users.push(users[i]);
-  });
-});
+//   // Fill the array to display it in the page
+//   $http.get('/services/route/users').success(function(users){
+//     for (var i in users)
+//       $scope.users.push(users[i]);
+//   });
+// });
 
-app.controller('LoginCtrl', function($scope, $rootScope, $http, $location) {
-  // This object will be filled by the form
-  $scope.user = {};
+// app.controller('LoginCtrl', function($scope, $rootScope, $http, $location) {
+//   // This object will be filled by the form
+//   $scope.user = {};
 
-  // Register the login() function
-  $scope.login = function(){
-    $http.post('/services/route/login', {
-      username: $scope.user.username,
-      password: $scope.user.password,
-    })
-    .success(function(user){
-      // No error: authentication OK
-      $rootScope.message = 'Usuario Autenticado!';
-      $location.url('/services/route/admin');
-    })
-    .error(function(){
-      // Error: authentication failed
-      $rootScope.message = 'Autenticacion Fallida.';
-      $location.url('/services/route/login');
-    });
-  };
-});
+//   // Register the login() function
+//   $scope.login = function(){
+//     $http.post('/services/route/login', {
+//       username: $scope.user.username,
+//       password: $scope.user.password,
+//     })
+//     .success(function(user){
+//       // No error: authentication OK
+//       $rootScope.message = 'Usuario Autenticado!';
+//       $location.url('/services/route/admin');
+//     })
+//     .error(function(){
+//       // Error: authentication failed
+//       $rootScope.message = 'Autenticacion Fallida.';
+//       $location.url('/services/route/login');
+//     });
+//   };
+// });
 
 app.controller('botondonacionesController', function($scope, $http, Donacion){
   $scope.donacion = Donacion.query();
@@ -323,7 +323,11 @@ app.controller("proyectoController", function ($scope ,$http, Proyecto, $transla
 
 // ---------Toolbar angular material
 
-app.controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $log) {
+app.controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $log, $translate) {
+
+    $scope.changeLanguage = function (langKey) {
+    $translate.use(langKey);
+  };
 
     $scope.toggleRight = buildToggler('right');
     $scope.isOpenRight = function(){

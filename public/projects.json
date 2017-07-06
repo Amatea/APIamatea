@@ -38,5 +38,15 @@
     "location": "Parque Nacional Farallones de Cali y su área de influencia",
     "sponsor": "CVC",
     "period": "2014"
+  },
+  {
+    "id": 5,
+    "img": "",
+    "name": "Compensación Huella de Carbono Recamier",
+    "description": "Proyecto de Compensación ambiental de la empresa Recamier",
+    "objetive": "Contribuir a la restauracion ecologica por medio de siembra de arboles en el marco de la compensación ambiental de la empresa Recamier",
+    "location": "Parque Nacional Farallones de Cali y su área de influencia",
+    "sponsor": "Recamier",
+    "period": "2016"
   }
 ]
