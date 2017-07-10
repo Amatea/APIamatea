@@ -32,17 +32,17 @@ app.controller("contactoController", function ($http, $scope, $location, Contact
 
 });
 
-app.controller("noticiaController", function ($scope, $location, Noticia){
-    $scope.noticia = Noticia.query();
+// app.controller("noticiaController", function ($scope, $location, Noticia){
+//     $scope.noticia = Noticia.query();
 
 
-    $scope.noticias = new Noticia();
+//     $scope.noticias = new Noticia();
 
-    $scope.addNoticia = function() {
-        $scope.noticias.$save()
-        $location.path('/admin');
-    };
-});
+//     $scope.addNoticia = function() {
+//         $scope.noticias.$save()
+//         $location.path('/admin');
+//     };
+// });
 
 app.controller("noticiadetalleController", function ($scope, $location, $routeParams, Noticia){
 

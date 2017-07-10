@@ -1,0 +1,67 @@
+<div layout="column"  ng-cloak>
+  <section layout="row" flex>
+    
+    <md-content flex >
+      <div layout="column"  layout-align="none">
+        <md-toolbar  layout="row" layout-align="center center">
+	        
+	        
+  	  		<md-fab-trigger  class="align-with-text" hide-gt-xs>
+  	      		<md-button aria-label="menu" class="md-fab md-mini" ng-click="toggleRight()" ng-hide="isOpenRight()">
+  	       		 <md-icon md-svg-src="img/icons/menu.svg"></md-icon>
+  	      		</md-button>
+  	    	</md-fab-trigger>
+          <a href="#/inicio.html"><div  class="header_logo"></div></a>
+          <span flex></span>
+            <div layout="row" hide-xs>
+              <md-button ng-href="#/somos/">{{ 'toolbar.about' | translate }}</md-button>
+              <md-button ng-href="#/servicios/">{{ 'toolbar.services' | translate }}</md-button> 
+              <md-button ng-href="#/hacemos/">{{ 'toolbar.projects' | translate }}</md-button> 
+              <md-button ng-href="#/contactenos/">{{ 'toolbar.contact' | translate }}</md-button>
+              <md-menu>
+                <md-button aria-label="Open demo menu" ng-click="$mdOpenMenu($event)" aria-label="More">
+                  {{ 'LANGUAGE' | translate }}
+                </md-button>
+                <md-menu-content>
+                  <md-menu-item>
+                    <button ng-click="changeLanguage('es')" translate="BUTTON_LANG_ES"></button>
+                  </md-menu-item>
+                  <md-menu-item>
+                    <button ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN"></button>
+                  </md-menu-item>
+                </md-menu-content>
+              </md-menu>
+            </div>
+        </md-toolbar>
+      </div>
+    </md-content>
+
+    <md-sidenav md-component-id="right">
+      <md-toolbar  layout-align="center center">
+      <a href="#/inicio.html"><div  class="header_logo"></div></a>
+      </md-toolbar>
+      <md-content ng-controller="RightCtrl" layout="column" layout-padding>
+        <md-button ng-href="#/somos/">{{ 'toolbar.about' | translate }}</md-button>
+        <md-button ng-href="#/servicios/">{{ 'toolbar.services' | translate }}</md-button> 
+        <md-button ng-href="#/hacemos/">{{ 'toolbar.projects' | translate }}</md-button> 
+        <md-button ng-href="#/contactenos/">{{ 'toolbar.contact' | translate }}</md-button>
+      </md-content>
+      
+      <md-content layout="row" layout-align="center center">
+        <md-button  class="md-fab md-mini md-primary" ng-click="close()" target="_new" ng-href="http://www.facebook.com/amatea.org">
+          <md-icon md-svg-src="img/icons/facebook.svg"></md-icon>
+        </md-button>
+        <md-button  class="md-fab md-mini md-primary" ng-click="close()" target="_new" ng-href="http://www.twitter.com/amatea_">
+          <md-icon md-svg-src="img/icons/twitter.svg"></md-icon>
+        </md-button>
+        <md-button  class="md-fab md-mini md-primary" ng-click="close()" target="_new" ng-href="http://www.youtube.com/comunicateatv">
+          <md-icon md-svg-src="img/icons/youtube.svg"></md-icon>
+        </md-button>
+      </md-content>
+      <md-content layout="row" layout-align="center center">
+        <button ng-click="changeLanguage('es')" translate="BUTTON_LANG_ES" layout-margin flex></button>
+        <button ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN" layout-margin flex></button>
+      </md-content>
+    </md-sidenav>
+  </section>
+</div>
