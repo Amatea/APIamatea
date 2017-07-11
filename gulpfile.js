@@ -29,7 +29,7 @@ var interceptErrors = function(error) {
 
 
 gulp.task('browserify', function() {
-  return browserify('./public/js/app2.js')
+  return browserify('./public/js/app.js')
       .transform(babelify, {presets: ["es2015"]})
       .transform(ngAnnotate)
       .bundle()

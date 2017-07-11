@@ -3,6 +3,7 @@ import angular from 'angular';
 // Import our app config files
 import appConfig  from './config/app.config';
 
+import 'angular-ui-router';
 import 'angular-aria';
 import 'angular-resource';
 import 'angular-route';
@@ -17,6 +18,7 @@ import 'angular-translate-loader-static-files'
 import './components/Toolbar'
 
 const requires = [
+  'ui.router',
   'ngResource',
   'ngRoute',
   'leaflet-directive',
@@ -31,3 +33,5 @@ const requires = [
   ];
 
   window.App = angular.module('App', requires);
+
+  angular.module('App').config(appConfig)
