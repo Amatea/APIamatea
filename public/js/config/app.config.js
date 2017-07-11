@@ -6,7 +6,7 @@ function AppConfig($urlRouterProvider, $mdThemingProvider, $translateProvider) {
         'default': '500',
         'hue-1': '700'
       }) 
-       .accentPalette('orange');
+       .accentPalette('purple');
 
   
   $urlRouterProvider.otherwise('/');

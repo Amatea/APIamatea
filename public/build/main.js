@@ -98221,11 +98221,15 @@ require('angular-translate');
 
 require('angular-translate-loader-static-files');
 
+require('./components/Home');
+
 require('./components/Toolbar');
+
+require('./components/Footer');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var requires = ['ui.router', 'ngResource', 'ngRoute', 'leaflet-directive', 'ngAnimate', 'ngAria', 'ngMessages', 'ngMaterial', 'ngSanitize', 'pascalprecht.translate', 'app.toolbar'];
+var requires = ['ui.router', 'ngResource', 'ngRoute', 'leaflet-directive', 'ngAnimate', 'ngAria', 'ngMessages', 'ngMaterial', 'ngSanitize', 'pascalprecht.translate', 'app.home', 'app.toolbar', 'app.footer'];
 
 // Import our app config files
 
@@ -98234,7 +98238,110 @@ window.App = _angular2.default.module('App', requires);
 
 _angular2.default.module('App').config(_app2.default);
 
-},{"./components/Toolbar":107,"./config/app.config":109,"angular":105,"angular-animate":74,"angular-aria":76,"angular-leaflet-directive":77,"angular-material":79,"angular-messages":81,"angular-resource":83,"angular-route":85,"angular-sanitize":87,"angular-translate":89,"angular-translate-loader-static-files":88,"angular-ui-router":93}],107:[function(require,module,exports){
+},{"./components/Footer":108,"./components/Home":110,"./components/Toolbar":111,"./config/app.config":113,"angular":105,"angular-animate":74,"angular-aria":76,"angular-leaflet-directive":77,"angular-material":79,"angular-messages":81,"angular-resource":83,"angular-route":85,"angular-sanitize":87,"angular-translate":89,"angular-translate-loader-static-files":88,"angular-ui-router":93}],107:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var FooterCtrl = function FooterCtrl($scope) {
+  'ngInject';
+
+  _classCallCheck(this, FooterCtrl);
+};
+FooterCtrl.$inject = ["$scope"];
+
+var FooterConfig = {
+  templateUrl: 'js/components/Footer/footer.html',
+  controller: FooterCtrl
+};
+
+exports.default = FooterConfig;
+
+},{}],108:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _angular = require('angular');
+
+var _angular2 = _interopRequireDefault(_angular);
+
+var _footer = require('./footer.component');
+
+var _footer2 = _interopRequireDefault(_footer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// Create the module where our functionality can attach to
+var footerModule = _angular2.default.module('app.footer', []);
+
+// Components
+
+footerModule.component('footerApp', _footer2.default);
+
+exports.default = footerModule;
+
+},{"./footer.component":107,"angular":105}],109:[function(require,module,exports){
+'use strict';
+
+HomeConfig.$inject = ["$stateProvider"];
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+function HomeConfig($stateProvider) {
+  'ngInject';
+
+  $stateProvider.state('home', {
+    url: '/',
+    templateUrl: 'js/Components/Home/home.html'
+
+  });
+};
+
+exports.default = HomeConfig;
+
+},{}],110:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _angular = require('angular');
+
+var _angular2 = _interopRequireDefault(_angular);
+
+var _home = require('./home.config');
+
+var _home2 = _interopRequireDefault(_home);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// Create the module where our functionality can attach to
+var homeModule = _angular2.default.module('app.home', []);
+
+// Include our UI-Router config settings
+
+homeModule.config(_home2.default);
+
+// // Controllers
+// import HomeCtrl from './home.controller';
+// homeModule.controller('HomeCtrl', HomeCtrl);
+
+// //Services
+// import HomeService from './home.service';
+// homeModule.service('Home', HomeService);
+
+
+exports.default = homeModule;
+
+},{"./home.config":109,"angular":105}],111:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98260,7 +98367,7 @@ toolbarModule.component('toolbarApp', _toolbar2.default);
 
 exports.default = toolbarModule;
 
-},{"./toolbar.component":108,"angular":105}],108:[function(require,module,exports){
+},{"./toolbar.component":112,"angular":105}],112:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98328,7 +98435,7 @@ var ToolbarConfig = {
 
 exports.default = ToolbarConfig;
 
-},{}],109:[function(require,module,exports){
+},{}],113:[function(require,module,exports){
 'use strict';
 
 AppConfig.$inject = ["$urlRouterProvider", "$mdThemingProvider", "$translateProvider"];
@@ -98341,7 +98448,7 @@ function AppConfig($urlRouterProvider, $mdThemingProvider, $translateProvider) {
   $mdThemingProvider.theme('default').primaryPalette('light-green', {
     'default': '500',
     'hue-1': '700'
-  }).accentPalette('orange');
+  }).accentPalette('purple');
 
   $urlRouterProvider.otherwise('/');
 

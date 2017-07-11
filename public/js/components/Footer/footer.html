@@ -1,0 +1,59 @@
+<footer>
+	<md-content layout="row" layout-align-xs="center" layout-xs="column" >
+		<md-card layout-margin flex>
+			<md-content>
+				<md-toolbar class="md-hue-1">
+					<div class="md-toolbar-tools">
+						<md-card-title-text>
+							<span class="md-headline"><a href="http://amateapp.com">amateapp ::</a></span>
+						</md-card-title-text>
+					</div>
+				</md-toolbar>
+				<div layout-margin>
+					<div>
+						<h3>{{ 'footer.left.form-title' | translate }}</h3>
+					</div>
+					<form name="form">
+						<md-input-container class="md-block" flex-gt-sm>
+							<label>{{ 'footer.left.email' | translate }}</label>
+							<input ng-model="donacion.correo" required md-no-asterisk name="fase3" ng-pattern="/^.+@.+\..+$/">
+							<div ng-messages="form.fase3.$error">
+								<div ng-message-exp="['required', 'pattern']">{{ 'footer.left.required' | translate }}</div>
+							</div>
+						</md-input-container>
+					</form>
+						<md-button class="md-raised md-primary" ng-disabled="form.$invalid" ng-click="addDonacion(); showAlert($event); postMail(donacion);">{{ 'footer.left.send' | translate }}</md-button> 
+				</div>
+				
+				<div layout-margin>
+					<h4>{{ 'footer.left.info' | translate }}</h4>
+					<h6>{{ 'footer.left.observation' | translate }}</h6>
+				</div>
+			</md-content>		
+		</md-card>
+		
+
+		<md-card layout-margin flex>
+			<md-content>
+				<md-toolbar class="md-hue-1">
+					<div class="md-toolbar-tools">
+						<md-card-title-text>
+							<span class="md-headline">{{ 'footer.rigth.title' | translate }}</span>
+						</md-card-title-text>
+					</div>
+				</md-toolbar>
+					<md-content layout="row" layout-align="center center">
+				        <md-button  class="md-fab md-mini " ng-click="close()" target="_new" ng-href="http://www.facebook.com/amatea.org">
+				          <md-icon md-svg-src="img/icons/facebook.svg"></md-icon>
+				        </md-button>
+				        <md-button  class="md-fab md-mini " ng-click="close()" target="_new" ng-href="http://www.twitter.com/amatea_">
+				          <md-icon md-svg-src="img/icons/twitter.svg"></md-icon>
+				        </md-button>
+				        <md-button  class="md-fab md-mini " ng-click="close()" target="_new" ng-href="http://www.youtube.com/comunicateatv">
+				          <md-icon md-svg-src="img/icons/youtube.svg"></md-icon>
+				        </md-button>
+	      			</md-content>
+			</md-content>
+		</md-card>
+	</md-content>
+</footer>

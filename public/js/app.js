@@ -15,7 +15,9 @@ import 'angular-leaflet-directive';
 import 'angular-translate'
 import 'angular-translate-loader-static-files'
 
+import './components/Home'
 import './components/Toolbar'
+import './components/Footer'
 
 const requires = [
   'ui.router',
@@ -29,7 +31,9 @@ const requires = [
   'ngSanitize',
   'pascalprecht.translate',
 
-  'app.toolbar'
+  'app.home',
+  'app.toolbar',
+  'app.footer'
   ];
 
   window.App = angular.module('App', requires);
