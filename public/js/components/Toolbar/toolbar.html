@@ -14,10 +14,23 @@
           <a href="#/inicio.html"><div  class="header_logo"></div></a>
           <span flex></span>
             <div layout="row" hide-xs>
-              <md-button ng-href="#/somos/">{{ 'toolbar.about' | translate }}</md-button>
-              <md-button ng-href="#/services/">{{ 'toolbar.services' | translate }}</md-button> 
-              <md-button ng-href="#/projects/">{{ 'toolbar.projects' | translate }}</md-button> 
-              <md-button ng-href="#/contact/">{{ 'toolbar.contact' | translate }}</md-button>
+              <md-button ng-href="#!/somos/">{{ 'toolbar.about' | translate }}</md-button>
+              <md-button ng-href="#!/services">{{ 'toolbar.services' | translate }}</md-button>
+              <md-menu>
+                <md-button aria-label="Open demo menu" ng-click="$mdOpenMenu($event)" aria-label="More">
+                  {{ 'toolbar.make' | translate }}
+                </md-button>
+                <md-menu-content>
+                  <md-menu-item>
+                    <md-button ng-href="#!/make">{{ 'toolbar.make' | translate }}</md-button> 
+                  </md-menu-item>
+                  <md-menu-item>
+                    <md-button ng-href="#!/projects">{{ 'toolbar.projects' | translate }}</md-button> 
+                  </md-menu-item>
+                </md-menu-content>
+              </md-menu>
+              
+              <md-button ng-href="#!/contact">{{ 'toolbar.contact' | translate }}</md-button>
               <md-menu>
                 <md-button aria-label="Open demo menu" ng-click="$mdOpenMenu($event)" aria-label="More">
                   {{ 'LANGUAGE' | translate }}
@@ -41,10 +54,10 @@
       <a href="#/inicio.html"><div  class="header_logo"></div></a>
       </md-toolbar>
       <md-content layout="column" layout-padding>
-        <md-button ng-href="#/somos/">{{ 'toolbar.about' | translate }}</md-button>
-        <md-button ng-href="#/services/">{{ 'toolbar.services' | translate }}</md-button> 
-        <md-button ng-href="#/projects/">{{ 'toolbar.projects' | translate }}</md-button> 
-        <md-button ng-href="#/contact/">{{ 'toolbar.contact' | translate }}</md-button>
+        <md-button ng-href="#!/somos">{{ 'toolbar.about' | translate }}</md-button>
+        <md-button ng-href="#!/services">{{ 'toolbar.services' | translate }}</md-button> 
+        <md-button ng-href="#!/make">{{ 'toolbar.projects' | translate }}</md-button> 
+        <md-button ng-href="#!/contact">{{ 'toolbar.contact' | translate }}</md-button>
       </md-content>
       
       <md-content layout="row" layout-align="center center">

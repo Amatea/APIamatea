@@ -6,7 +6,8 @@
   "toolbar": {
     "about": "Somos",
     "services": "Servicios",
-    "projects": "Hacemos",
+    "make": "Hacemos",
+    "projects": "Proyectos",
     "contact": "Contactenos"
   },
 

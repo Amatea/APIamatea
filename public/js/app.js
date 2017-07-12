@@ -15,10 +15,13 @@ import 'angular-leaflet-directive';
 import 'angular-translate'
 import 'angular-translate-loader-static-files'
 
+import './components/Contact'
 import './components/Home'
+import './components/Make'
 import './components/Services'
 import './components/Toolbar'
 import './components/Trademarks'
+import './components/Projects'
 import './components/Footer'
 
 const requires = [
@@ -33,10 +36,13 @@ const requires = [
   'ngSanitize',
   'pascalprecht.translate',
 
+  'app.contact',
   'app.home',
+  'app.make',
   'app.services',
   'app.toolbar',
   'app.trademarks',
+  'app.projects',
   'app.footer'
   ];
 

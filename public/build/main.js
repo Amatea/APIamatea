@@ -98221,7 +98221,11 @@ require('angular-translate');
 
 require('angular-translate-loader-static-files');
 
+require('./components/Contact');
+
 require('./components/Home');
+
+require('./components/Make');
 
 require('./components/Services');
 
@@ -98229,20 +98233,74 @@ require('./components/Toolbar');
 
 require('./components/Trademarks');
 
+require('./components/Projects');
+
 require('./components/Footer');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var requires = ['ui.router', 'ngResource', 'ngRoute', 'leaflet-directive', 'ngAnimate', 'ngAria', 'ngMessages', 'ngMaterial', 'ngSanitize', 'pascalprecht.translate', 'app.home', 'app.services', 'app.toolbar', 'app.trademarks', 'app.footer'];
-
 // Import our app config files
-
+var requires = ['ui.router', 'ngResource', 'ngRoute', 'leaflet-directive', 'ngAnimate', 'ngAria', 'ngMessages', 'ngMaterial', 'ngSanitize', 'pascalprecht.translate', 'app.contact', 'app.home', 'app.make', 'app.services', 'app.toolbar', 'app.trademarks', 'app.projects', 'app.footer'];
 
 window.App = _angular2.default.module('App', requires);
 
 _angular2.default.module('App').config(_app2.default);
 
-},{"./components/Footer":108,"./components/Home":110,"./components/Services":111,"./components/Toolbar":113,"./components/Trademarks":115,"./config/app.config":117,"angular":105,"angular-animate":74,"angular-aria":76,"angular-leaflet-directive":77,"angular-material":79,"angular-messages":81,"angular-resource":83,"angular-route":85,"angular-sanitize":87,"angular-translate":89,"angular-translate-loader-static-files":88,"angular-ui-router":93}],107:[function(require,module,exports){
+},{"./components/Contact":108,"./components/Footer":110,"./components/Home":112,"./components/Make":113,"./components/Projects":115,"./components/Services":118,"./components/Toolbar":120,"./components/Trademarks":122,"./config/app.config":124,"angular":105,"angular-animate":74,"angular-aria":76,"angular-leaflet-directive":77,"angular-material":79,"angular-messages":81,"angular-resource":83,"angular-route":85,"angular-sanitize":87,"angular-translate":89,"angular-translate-loader-static-files":88,"angular-ui-router":93}],107:[function(require,module,exports){
+'use strict';
+
+ContactConfig.$inject = ["$stateProvider"];
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+function ContactConfig($stateProvider) {
+  'ngInject';
+
+  $stateProvider.state('Contact', {
+    url: '/contact',
+    templateUrl: 'js/Components/Contact/contact.html'
+
+  });
+};
+
+exports.default = ContactConfig;
+
+},{}],108:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _angular = require('angular');
+
+var _angular2 = _interopRequireDefault(_angular);
+
+var _contact = require('./contact.config');
+
+var _contact2 = _interopRequireDefault(_contact);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// Create the module where our functionality can attach to
+var contactModule = _angular2.default.module('app.contact', []);
+
+// Include our UI-Router config settings
+
+contactModule.config(_contact2.default);
+
+// // Controllers
+// import makeCtrl from './make.controller';
+// makeModule.controller('makeCtrl', makeCtrl);
+
+// //Services
+// import makeService from './make.service';
+// makeModule.service('make', makeService);
+
+
+exports.default = contactModule;
+
+},{"./contact.config":107,"angular":105}],109:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98265,7 +98323,7 @@ var FooterConfig = {
 
 exports.default = FooterConfig;
 
-},{}],108:[function(require,module,exports){
+},{}],110:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98291,7 +98349,7 @@ footerModule.component('footerApp', _footer2.default);
 
 exports.default = footerModule;
 
-},{"./footer.component":107,"angular":105}],109:[function(require,module,exports){
+},{"./footer.component":109,"angular":105}],111:[function(require,module,exports){
 'use strict';
 
 HomeConfig.$inject = ["$stateProvider"];
@@ -98310,7 +98368,7 @@ function HomeConfig($stateProvider) {
 
 exports.default = HomeConfig;
 
-},{}],110:[function(require,module,exports){
+},{}],112:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98345,7 +98403,184 @@ homeModule.config(_home2.default);
 
 exports.default = homeModule;
 
-},{"./home.config":109,"angular":105}],111:[function(require,module,exports){
+},{"./home.config":111,"angular":105}],113:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _angular = require('angular');
+
+var _angular2 = _interopRequireDefault(_angular);
+
+var _make = require('./make.config');
+
+var _make2 = _interopRequireDefault(_make);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// Create the module where our functionality can attach to
+var makeModule = _angular2.default.module('app.make', []);
+
+// Include our UI-Router config settings
+
+makeModule.config(_make2.default);
+
+// // Controllers
+// import makeCtrl from './make.controller';
+// makeModule.controller('makeCtrl', makeCtrl);
+
+// //Services
+// import makeService from './make.service';
+// makeModule.service('make', makeService);
+
+
+exports.default = makeModule;
+
+},{"./make.config":114,"angular":105}],114:[function(require,module,exports){
+'use strict';
+
+MakeConfig.$inject = ["$stateProvider"];
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+function MakeConfig($stateProvider) {
+  'ngInject';
+
+  $stateProvider.state('Make', {
+    url: '/make',
+    templateUrl: 'js/Components/Make/make.html'
+
+  });
+};
+
+exports.default = MakeConfig;
+
+},{}],115:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _angular = require('angular');
+
+var _angular2 = _interopRequireDefault(_angular);
+
+var _projects = require('./projects.config');
+
+var _projects2 = _interopRequireDefault(_projects);
+
+var _projects3 = require('./projects.controller');
+
+var _projects4 = _interopRequireDefault(_projects3);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// Create the module where our functionality can attach to
+var projectsModule = _angular2.default.module('app.projects', []);
+
+// Include our UI-Router config settings
+
+projectsModule.config(_projects2.default);
+
+// Controllers
+
+projectsModule.controller('ProjectCtrl', _projects4.default);
+
+// //Services
+// import HomeService from './home.service';
+// homeModule.service('Home', HomeService);
+
+
+exports.default = projectsModule;
+
+},{"./projects.config":116,"./projects.controller":117,"angular":105}],116:[function(require,module,exports){
+'use strict';
+
+ProjectsConfig.$inject = ["$stateProvider"];
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+function ProjectsConfig($stateProvider) {
+  'ngInject';
+
+  $stateProvider.state('Projects', {
+    url: '/projects',
+    templateUrl: 'js/Components/Projects/projects.html',
+    controller: 'ProjectCtrl'
+  });
+};
+
+exports.default = ProjectsConfig;
+
+},{}],117:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var ProjectCtrl = function ProjectCtrl($scope) {
+  'ngInject';
+
+  _classCallCheck(this, ProjectCtrl);
+
+  $scope.proyecto = [{
+    "id": 1,
+    "img": "",
+    "name": "Restauración Ecológica en el Parque Nacional Natural Farallones de cali",
+    "description": "Proyecto ejecutado en el Parque Nacional Natural Farallones de Cali",
+    "objetive": " ",
+    "location": "Parque Nacional Natural Farallones de Cali",
+    "sponsor": "RB",
+    "period": "2010 - 2017"
+  }, {
+    "id": 2,
+    "img": "",
+    "name": "Conservación de la biodiversidad en paisajes impactados por la minería  en la Región del Chocó Biogeográfico",
+    "description": "Apoyo en el Parque Nacional Farallones",
+    "objetive": "Apoyar y facilitar actividades técnicas y administrativas al PNN Farallones de Cali en el marco del proyecto",
+    "location": "Parque Nacional Farallones de Cali",
+    "sponsor": "WWF",
+    "period": "2015 - 2016"
+  }, {
+    "id": 3,
+    "img": "",
+    "name": "Pagos Por Servicios Ambientales",
+    "description": "Se procedío a la implementación de un instrumento tipo PSAH, el cual integra a propietarios de predios privados, organizaciones comunitarias, empresas privada e instituciones ambientales, donde Amatea cumplío el rol de facilitadora de dicha sinergia. Como resultado del instrumento se lograró la iniciativa de destinación de 20 hectáreas potenciales para la conservación del recurso hídrico, en el sector La Aldea dentro de la Reserva Forestal Nacional, área colindante al Parque Nacional Natural Farallones de Cali, en la Vereda El Faro, Corregimiento de Los Andes, microcuenca de la cuenca río Cali.",
+    "objetive": "Desarrollo de un esquema tipo PSAH, en cuatro predios privados para aportar al mejoramiento de la calidad y cantidad de los servicios ambientales hidrológicos que se vienen realizando con empresas privadas y con las autoridades ambientales en las quebradas La Estrella, La Tigra, La Virgen y Pichindecito, microcuencas de la cuenca hidrográfica del río Cali",
+    "location": "Parque Nacional Farallones de Cali y su área de influencia",
+    "sponsor": "Patrimonio Natural",
+    "period": "2014"
+  }, {
+    "id": 4,
+    "img": "",
+    "name": "Restauración Ecológica Reserva Forestal Nacional de Cali",
+    "description": "Implementacion de obras biomecanicas para la restauracíon ecológica",
+    "objetive": "Restauracion ecologica con la implemantacíon de obras biomecanicas",
+    "location": "Parque Nacional Farallones de Cali y su área de influencia",
+    "sponsor": "CVC",
+    "period": "2014"
+  }, {
+    "id": 5,
+    "img": "",
+    "name": "Compensación Huella de Carbono Recamier",
+    "description": "Proyecto de Compensación ambiental de la empresa Recamier",
+    "objetive": "Contribuir a la restauracion ecologica por medio de siembra de arboles en el marco de la compensación ambiental de la empresa Recamier",
+    "location": "Parque Nacional Farallones de Cali y su área de influencia",
+    "sponsor": "Recamier",
+    "period": "2016"
+  }];
+};
+ProjectCtrl.$inject = ["$scope"];
+
+exports.default = ProjectCtrl;
+
+},{}],118:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98380,7 +98615,7 @@ servicesModule.config(_services2.default);
 
 exports.default = servicesModule;
 
-},{"./services.config":112,"angular":105}],112:[function(require,module,exports){
+},{"./services.config":119,"angular":105}],119:[function(require,module,exports){
 'use strict';
 
 ServicesConfig.$inject = ["$stateProvider"];
@@ -98399,7 +98634,7 @@ function ServicesConfig($stateProvider) {
 
 exports.default = ServicesConfig;
 
-},{}],113:[function(require,module,exports){
+},{}],120:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98425,7 +98660,7 @@ toolbarModule.component('toolbarApp', _toolbar2.default);
 
 exports.default = toolbarModule;
 
-},{"./toolbar.component":114,"angular":105}],114:[function(require,module,exports){
+},{"./toolbar.component":121,"angular":105}],121:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98493,7 +98728,7 @@ var ToolbarConfig = {
 
 exports.default = ToolbarConfig;
 
-},{}],115:[function(require,module,exports){
+},{}],122:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98519,7 +98754,7 @@ tradeModule.component('tradeApp', _trademarks2.default);
 
 exports.default = tradeModule;
 
-},{"./trademarks.component":116,"angular":105}],116:[function(require,module,exports){
+},{"./trademarks.component":123,"angular":105}],123:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98542,7 +98777,7 @@ var TradeConfig = {
 
 exports.default = TradeConfig;
 
-},{}],117:[function(require,module,exports){
+},{}],124:[function(require,module,exports){
 'use strict';
 
 AppConfig.$inject = ["$urlRouterProvider", "$mdThemingProvider", "$translateProvider"];
