@@ -11,7 +11,19 @@
   },
 
   "home": {
-    "header": "Nuestro Hogar"
+    "header": "Nuestro Hogar",
+    "support": "con el Apoyo:"
+
+  },
+
+  "services": {
+    "HEADLINE": "Sincronízate con la naturaleza",
+    "PARAGRAPH": "Acciones acordes con los ciclos naturales",
+    "title": "Nuestros Servicios",
+    "services-1": "Somos Huella Somos Eco",
+    "services-2": "Camino del Jaguar",
+    "services-3": "Cumple Siembra",
+    "services-4": "Vivero Forestal"
   },
 
   "projects": {

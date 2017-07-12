@@ -11,7 +11,19 @@
   },
 
   "home": {
-    "header": "Our Home"
+    "header": "Our Home",
+    "support": "supoort:"
+  },
+
+  "services": {
+    "HEADLINE": "Synchronize with nature",
+    "PARAGRAPH": "Actions in line with natural cycles",
+    "title": "Our Services",
+    "services-1": "We are Footprint We are Eco",
+    "services-2": "Jaguar Path",
+    "services-3": "Birthday Plant",
+    "services-4": "tree nursery"
+
   },
 
   "projects": {

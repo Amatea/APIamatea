@@ -16,7 +16,9 @@ import 'angular-translate'
 import 'angular-translate-loader-static-files'
 
 import './components/Home'
+import './components/Services'
 import './components/Toolbar'
+import './components/Trademarks'
 import './components/Footer'
 
 const requires = [
@@ -32,7 +34,9 @@ const requires = [
   'pascalprecht.translate',
 
   'app.home',
+  'app.services',
   'app.toolbar',
+  'app.trademarks',
   'app.footer'
   ];
 

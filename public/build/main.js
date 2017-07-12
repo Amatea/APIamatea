@@ -98223,13 +98223,17 @@ require('angular-translate-loader-static-files');
 
 require('./components/Home');
 
+require('./components/Services');
+
 require('./components/Toolbar');
+
+require('./components/Trademarks');
 
 require('./components/Footer');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var requires = ['ui.router', 'ngResource', 'ngRoute', 'leaflet-directive', 'ngAnimate', 'ngAria', 'ngMessages', 'ngMaterial', 'ngSanitize', 'pascalprecht.translate', 'app.home', 'app.toolbar', 'app.footer'];
+var requires = ['ui.router', 'ngResource', 'ngRoute', 'leaflet-directive', 'ngAnimate', 'ngAria', 'ngMessages', 'ngMaterial', 'ngSanitize', 'pascalprecht.translate', 'app.home', 'app.services', 'app.toolbar', 'app.trademarks', 'app.footer'];
 
 // Import our app config files
 
@@ -98238,7 +98242,7 @@ window.App = _angular2.default.module('App', requires);
 
 _angular2.default.module('App').config(_app2.default);
 
-},{"./components/Footer":108,"./components/Home":110,"./components/Toolbar":111,"./config/app.config":113,"angular":105,"angular-animate":74,"angular-aria":76,"angular-leaflet-directive":77,"angular-material":79,"angular-messages":81,"angular-resource":83,"angular-route":85,"angular-sanitize":87,"angular-translate":89,"angular-translate-loader-static-files":88,"angular-ui-router":93}],107:[function(require,module,exports){
+},{"./components/Footer":108,"./components/Home":110,"./components/Services":111,"./components/Toolbar":113,"./components/Trademarks":115,"./config/app.config":117,"angular":105,"angular-animate":74,"angular-aria":76,"angular-leaflet-directive":77,"angular-material":79,"angular-messages":81,"angular-resource":83,"angular-route":85,"angular-sanitize":87,"angular-translate":89,"angular-translate-loader-static-files":88,"angular-ui-router":93}],107:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98352,6 +98356,60 @@ var _angular = require('angular');
 
 var _angular2 = _interopRequireDefault(_angular);
 
+var _services = require('./services.config');
+
+var _services2 = _interopRequireDefault(_services);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// Create the module where our functionality can attach to
+var servicesModule = _angular2.default.module('app.services', []);
+
+// Include our UI-Router config settings
+
+servicesModule.config(_services2.default);
+
+// // Controllers
+// import HomeCtrl from './home.controller';
+// homeModule.controller('HomeCtrl', HomeCtrl);
+
+// //Services
+// import HomeService from './home.service';
+// homeModule.service('Home', HomeService);
+
+
+exports.default = servicesModule;
+
+},{"./services.config":112,"angular":105}],112:[function(require,module,exports){
+'use strict';
+
+ServicesConfig.$inject = ["$stateProvider"];
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+function ServicesConfig($stateProvider) {
+  'ngInject';
+
+  $stateProvider.state('Services', {
+    url: '/services',
+    templateUrl: 'js/Components/Services/services.html'
+
+  });
+};
+
+exports.default = ServicesConfig;
+
+},{}],113:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _angular = require('angular');
+
+var _angular2 = _interopRequireDefault(_angular);
+
 var _toolbar = require('./toolbar.component');
 
 var _toolbar2 = _interopRequireDefault(_toolbar);
@@ -98367,7 +98425,7 @@ toolbarModule.component('toolbarApp', _toolbar2.default);
 
 exports.default = toolbarModule;
 
-},{"./toolbar.component":112,"angular":105}],112:[function(require,module,exports){
+},{"./toolbar.component":114,"angular":105}],114:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98435,7 +98493,56 @@ var ToolbarConfig = {
 
 exports.default = ToolbarConfig;
 
-},{}],113:[function(require,module,exports){
+},{}],115:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _angular = require('angular');
+
+var _angular2 = _interopRequireDefault(_angular);
+
+var _trademarks = require('./trademarks.component');
+
+var _trademarks2 = _interopRequireDefault(_trademarks);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// Create the module where our functionality can attach to
+var tradeModule = _angular2.default.module('app.trademarks', []);
+
+// Components
+
+tradeModule.component('tradeApp', _trademarks2.default);
+
+exports.default = tradeModule;
+
+},{"./trademarks.component":116,"angular":105}],116:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var TradeCtrl = function TradeCtrl($scope) {
+  'ngInject';
+
+  _classCallCheck(this, TradeCtrl);
+};
+TradeCtrl.$inject = ["$scope"];
+
+var TradeConfig = {
+  controller: TradeCtrl,
+  templateUrl: 'js/components/Trademarks/trademarks.html'
+};
+
+exports.default = TradeConfig;
+
+},{}],117:[function(require,module,exports){
 'use strict';
 
 AppConfig.$inject = ["$urlRouterProvider", "$mdThemingProvider", "$translateProvider"];
