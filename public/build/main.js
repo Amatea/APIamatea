@@ -98191,6 +98191,60 @@ module.exports = angular;
 },{"./angular":104}],106:[function(require,module,exports){
 'use strict';
 
+HomeConfig.$inject = ["$stateProvider"];
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+function HomeConfig($stateProvider) {
+  'ngInject';
+
+  $stateProvider.state('home', {
+    url: '/',
+    templateUrl: 'js/Home/home.html'
+
+  });
+};
+
+exports.default = HomeConfig;
+
+},{}],107:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _angular = require('angular');
+
+var _angular2 = _interopRequireDefault(_angular);
+
+var _home = require('./home.config');
+
+var _home2 = _interopRequireDefault(_home);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// Create the module where our functionality can attach to
+var homeModule = _angular2.default.module('app.home', []);
+
+// Include our UI-Router config settings
+
+homeModule.config(_home2.default);
+
+// // Controllers
+// import HomeCtrl from './home.controller';
+// homeModule.controller('HomeCtrl', HomeCtrl);
+
+// //Services
+// import HomeService from './home.service';
+// homeModule.service('Home', HomeService);
+
+
+exports.default = homeModule;
+
+},{"./home.config":106,"angular":105}],108:[function(require,module,exports){
+'use strict';
+
 var _angular = require('angular');
 
 var _angular2 = _interopRequireDefault(_angular);
@@ -98223,7 +98277,7 @@ require('angular-translate-loader-static-files');
 
 require('./components/Contact');
 
-require('./components/Home');
+require('./Home');
 
 require('./components/Make');
 
@@ -98255,7 +98309,7 @@ _angular2.default.module('App').config(_app2.default).factory('Donacion', ['$res
   });
 }]);
 
-},{"./components/Contact":110,"./components/Footer":112,"./components/Home":114,"./components/Make":115,"./components/Projects":117,"./components/Restauration":120,"./components/Services":123,"./components/Toolbar":125,"./components/Trademarks":127,"./config/app.config":129,"angular":105,"angular-animate":74,"angular-aria":76,"angular-leaflet-directive":77,"angular-material":79,"angular-messages":81,"angular-resource":83,"angular-route":85,"angular-sanitize":87,"angular-translate":89,"angular-translate-loader-static-files":88,"angular-ui-router":93}],107:[function(require,module,exports){
+},{"./Home":107,"./components/Contact":112,"./components/Footer":114,"./components/Make":115,"./components/Projects":117,"./components/Restauration":120,"./components/Services":123,"./components/Toolbar":125,"./components/Trademarks":127,"./config/app.config":129,"angular":105,"angular-animate":74,"angular-aria":76,"angular-leaflet-directive":77,"angular-material":79,"angular-messages":81,"angular-resource":83,"angular-route":85,"angular-sanitize":87,"angular-translate":89,"angular-translate-loader-static-files":88,"angular-ui-router":93}],109:[function(require,module,exports){
 'use strict';
 
 ContactConfig.$inject = ["$stateProvider"];
@@ -98274,7 +98328,7 @@ function ContactConfig($stateProvider) {
 
 exports.default = ContactConfig;
 
-},{}],108:[function(require,module,exports){
+},{}],110:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98317,7 +98371,7 @@ ContactCtrl.$inject = ["$scope", "Contact", "$location", "$http"];
 
 exports.default = ContactCtrl;
 
-},{}],109:[function(require,module,exports){
+},{}],111:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98341,7 +98395,7 @@ Contact.$inject = ["$resource"];
 
 exports.default = Contact;
 
-},{}],110:[function(require,module,exports){
+},{}],112:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98383,7 +98437,7 @@ contactModule.service('Contact', _contact6.default);
 
 exports.default = contactModule;
 
-},{"./contact.config":107,"./contact.controller":108,"./contact.service":109,"angular":105}],111:[function(require,module,exports){
+},{"./contact.config":109,"./contact.controller":110,"./contact.service":111,"angular":105}],113:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98431,7 +98485,7 @@ var FooterConfig = {
 
 exports.default = FooterConfig;
 
-},{}],112:[function(require,module,exports){
+},{}],114:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98457,61 +98511,7 @@ footerModule.component('footerApp', _footer2.default);
 
 exports.default = footerModule;
 
-},{"./footer.component":111,"angular":105}],113:[function(require,module,exports){
-'use strict';
-
-HomeConfig.$inject = ["$stateProvider"];
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-function HomeConfig($stateProvider) {
-  'ngInject';
-
-  $stateProvider.state('home', {
-    url: '/',
-    templateUrl: 'js/Components/Home/home.html'
-
-  });
-};
-
-exports.default = HomeConfig;
-
-},{}],114:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _angular = require('angular');
-
-var _angular2 = _interopRequireDefault(_angular);
-
-var _home = require('./home.config');
-
-var _home2 = _interopRequireDefault(_home);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// Create the module where our functionality can attach to
-var homeModule = _angular2.default.module('app.home', []);
-
-// Include our UI-Router config settings
-
-homeModule.config(_home2.default);
-
-// // Controllers
-// import HomeCtrl from './home.controller';
-// homeModule.controller('HomeCtrl', HomeCtrl);
-
-// //Services
-// import HomeService from './home.service';
-// homeModule.service('Home', HomeService);
-
-
-exports.default = homeModule;
-
-},{"./home.config":113,"angular":105}],115:[function(require,module,exports){
+},{"./footer.component":113,"angular":105}],115:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -99107,4 +99107,4 @@ function AppConfig($urlRouterProvider, $mdThemingProvider, $translateProvider) {
 
 exports.default = AppConfig;
 
-},{}]},{},[106]);
+},{}]},{},[108]);

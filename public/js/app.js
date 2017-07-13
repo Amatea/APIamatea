@@ -16,7 +16,7 @@ import 'angular-translate'
 import 'angular-translate-loader-static-files'
 
 import './components/Contact'
-import './components/Home'
+import './Home'
 import './components/Make'
 import './components/Services'
 import './components/Toolbar'
