@@ -12,7 +12,7 @@ var sass          = require('gulp-sass');
 
 // Where our files are located
 var jsFiles   = "src/js/**/*.js";
-// var viewFiles = "src/js/**/*.html";
+var viewFiles = "src/js/**/*.html";
 
 var interceptErrors = function(error) {
   var args = Array.prototype.slice.call(arguments);
