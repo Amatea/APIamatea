@@ -98235,18 +98235,27 @@ require('./components/Trademarks');
 
 require('./components/Projects');
 
+require('./components/Restauration');
+
 require('./components/Footer');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var requires = ['ui.router', 'ngResource', 'ngRoute', 'leaflet-directive', 'ngAnimate', 'ngAria', 'ngMessages', 'ngMaterial', 'ngSanitize', 'pascalprecht.translate', 'app.contact', 'app.home', 'app.make', 'app.services', 'app.toolbar', 'app.trademarks', 'app.projects', 'app.restauration', 'app.footer'];
+
 // Import our app config files
-var requires = ['ui.router', 'ngResource', 'ngRoute', 'leaflet-directive', 'ngAnimate', 'ngAria', 'ngMessages', 'ngMaterial', 'ngSanitize', 'pascalprecht.translate', 'app.contact', 'app.home', 'app.make', 'app.services', 'app.toolbar', 'app.trademarks', 'app.projects', 'app.footer'];
+
 
 window.App = _angular2.default.module('App', requires);
 
-_angular2.default.module('App').config(_app2.default);
+_angular2.default.module('App').config(_app2.default).factory('Donacion', ['$resource', function ($resource) {
+  return $resource('api/donaciones/:id', { id: '@_id' }, {
+    update: { method: 'PUT' },
+    get: { method: 'GET', isArray: false }
+  });
+}]);
 
-},{"./components/Contact":108,"./components/Footer":110,"./components/Home":112,"./components/Make":113,"./components/Projects":115,"./components/Services":118,"./components/Toolbar":120,"./components/Trademarks":122,"./config/app.config":124,"angular":105,"angular-animate":74,"angular-aria":76,"angular-leaflet-directive":77,"angular-material":79,"angular-messages":81,"angular-resource":83,"angular-route":85,"angular-sanitize":87,"angular-translate":89,"angular-translate-loader-static-files":88,"angular-ui-router":93}],107:[function(require,module,exports){
+},{"./components/Contact":110,"./components/Footer":112,"./components/Home":114,"./components/Make":115,"./components/Projects":117,"./components/Restauration":120,"./components/Services":123,"./components/Toolbar":125,"./components/Trademarks":127,"./config/app.config":129,"angular":105,"angular-animate":74,"angular-aria":76,"angular-leaflet-directive":77,"angular-material":79,"angular-messages":81,"angular-resource":83,"angular-route":85,"angular-sanitize":87,"angular-translate":89,"angular-translate-loader-static-files":88,"angular-ui-router":93}],107:[function(require,module,exports){
 'use strict';
 
 ContactConfig.$inject = ["$stateProvider"];
@@ -98258,14 +98267,81 @@ function ContactConfig($stateProvider) {
 
   $stateProvider.state('Contact', {
     url: '/contact',
-    templateUrl: 'js/Components/Contact/contact.html'
-
+    templateUrl: 'js/Components/Contact/contact.html',
+    controller: 'ContactCtrl'
   });
 };
 
 exports.default = ContactConfig;
 
 },{}],108:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var ContactCtrl = function ContactCtrl($scope, Contact, $location, $http) {
+  'ngInject';
+
+  _classCallCheck(this, ContactCtrl);
+
+  $scope.contacto = Contact.query();
+
+  $scope.contactos = new Contact();
+
+  $scope.addContacto = function () {
+    $scope.contactos.$save();
+    $location.path('/');
+  };
+
+  $scope.postData = {};
+
+  $scope.postMail = function (contacto) {
+    // parametro debe serigual al $scope de los datos (contacto)
+
+
+    // wrap all your input values in $scope.postData
+    $scope.postData = angular.copy(contacto);
+
+    $http.post('api/mail_contacto', $scope.postData).success(function (data) {
+      console.log(data);
+    }).error(function (data) {
+      // Show error message
+    });
+  };
+};
+ContactCtrl.$inject = ["$scope", "Contact", "$location", "$http"];
+
+exports.default = ContactCtrl;
+
+},{}],109:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Contact = function Contact($resource) {
+  'ngInject';
+
+  _classCallCheck(this, Contact);
+
+  return $resource('/api/contacto/:id', { id: '@_id' }, {
+    update: { method: 'PUT' },
+    get: { method: 'GET', isArray: false },
+    show: { method: 'GET' }
+  });
+};
+Contact.$inject = ["$resource"];
+
+exports.default = Contact;
+
+},{}],110:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98280,6 +98356,14 @@ var _contact = require('./contact.config');
 
 var _contact2 = _interopRequireDefault(_contact);
 
+var _contact3 = require('./contact.controller');
+
+var _contact4 = _interopRequireDefault(_contact3);
+
+var _contact5 = require('./contact.service');
+
+var _contact6 = _interopRequireDefault(_contact5);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // Create the module where our functionality can attach to
@@ -98289,18 +98373,17 @@ var contactModule = _angular2.default.module('app.contact', []);
 
 contactModule.config(_contact2.default);
 
-// // Controllers
-// import makeCtrl from './make.controller';
-// makeModule.controller('makeCtrl', makeCtrl);
+// Controllers
 
-// //Services
-// import makeService from './make.service';
-// makeModule.service('make', makeService);
+contactModule.controller('ContactCtrl', _contact4.default);
 
+//Services
+
+contactModule.service('Contact', _contact6.default);
 
 exports.default = contactModule;
 
-},{"./contact.config":107,"angular":105}],109:[function(require,module,exports){
+},{"./contact.config":107,"./contact.controller":108,"./contact.service":109,"angular":105}],111:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98309,12 +98392,37 @@ Object.defineProperty(exports, "__esModule", {
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var FooterCtrl = function FooterCtrl($scope) {
+var FooterCtrl = function FooterCtrl($scope, $http, Donacion, $mdMedia, $mdDialog) {
   'ngInject';
 
   _classCallCheck(this, FooterCtrl);
+
+  $scope.donacion = new Donacion();
+
+  $scope.addDonacion = function () {
+    //create a new movie. Issues a POST to /api/movies
+    $scope.donacion.$save();
+  };
+
+  $scope.postData = {};
+  $scope.postMail = function (donacion) {
+    // parametro debe serigual al $scope de los datos (contacto)
+    // wrap all your input values in $scope.postData
+    $scope.postData = angular.copy(donacion);
+
+    $http.post('api/mail_donacion', $scope.postData).success(function (data) {}).error(function (data) {});
+  };
+
+  $scope.status = '  ';
+  $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
+  $scope.showAlert = function (ev) {
+    // Appending dialog to document.body to cover sidenav in docs app
+    // Modal dialogs should fully cover application
+    // to prevent interaction outside of dialog
+    $mdDialog.show($mdDialog.alert().parent(angular.element(document.querySelector('#popupContainer'))).clickOutsideToClose(true).title('Ya casi, siembras tu Árbol!!').textContent('Nos pondremos en contacto pronto!!').ariaLabel('Alert Dialog Demo').ok('continua!').targetEvent(ev));
+  };
 };
-FooterCtrl.$inject = ["$scope"];
+FooterCtrl.$inject = ["$scope", "$http", "Donacion", "$mdMedia", "$mdDialog"];
 
 var FooterConfig = {
   templateUrl: 'js/components/Footer/footer.html',
@@ -98323,7 +98431,7 @@ var FooterConfig = {
 
 exports.default = FooterConfig;
 
-},{}],110:[function(require,module,exports){
+},{}],112:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98349,7 +98457,7 @@ footerModule.component('footerApp', _footer2.default);
 
 exports.default = footerModule;
 
-},{"./footer.component":109,"angular":105}],111:[function(require,module,exports){
+},{"./footer.component":111,"angular":105}],113:[function(require,module,exports){
 'use strict';
 
 HomeConfig.$inject = ["$stateProvider"];
@@ -98368,7 +98476,7 @@ function HomeConfig($stateProvider) {
 
 exports.default = HomeConfig;
 
-},{}],112:[function(require,module,exports){
+},{}],114:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98403,7 +98511,7 @@ homeModule.config(_home2.default);
 
 exports.default = homeModule;
 
-},{"./home.config":111,"angular":105}],113:[function(require,module,exports){
+},{"./home.config":113,"angular":105}],115:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98438,7 +98546,7 @@ makeModule.config(_make2.default);
 
 exports.default = makeModule;
 
-},{"./make.config":114,"angular":105}],114:[function(require,module,exports){
+},{"./make.config":116,"angular":105}],116:[function(require,module,exports){
 'use strict';
 
 MakeConfig.$inject = ["$stateProvider"];
@@ -98457,7 +98565,7 @@ function MakeConfig($stateProvider) {
 
 exports.default = MakeConfig;
 
-},{}],115:[function(require,module,exports){
+},{}],117:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98496,7 +98604,7 @@ projectsModule.controller('ProjectCtrl', _projects4.default);
 
 exports.default = projectsModule;
 
-},{"./projects.config":116,"./projects.controller":117,"angular":105}],116:[function(require,module,exports){
+},{"./projects.config":118,"./projects.controller":119,"angular":105}],118:[function(require,module,exports){
 'use strict';
 
 ProjectsConfig.$inject = ["$stateProvider"];
@@ -98515,7 +98623,7 @@ function ProjectsConfig($stateProvider) {
 
 exports.default = ProjectsConfig;
 
-},{}],117:[function(require,module,exports){
+},{}],119:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -98580,7 +98688,201 @@ ProjectCtrl.$inject = ["$scope"];
 
 exports.default = ProjectCtrl;
 
-},{}],118:[function(require,module,exports){
+},{}],120:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _angular = require('angular');
+
+var _angular2 = _interopRequireDefault(_angular);
+
+var _restauration = require('./restauration.config');
+
+var _restauration2 = _interopRequireDefault(_restauration);
+
+var _restauration3 = require('./restauration.controller');
+
+var _restauration4 = _interopRequireDefault(_restauration3);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// Create the module where our functionality can attach to
+var restaurationModule = _angular2.default.module('app.restauration', []);
+
+// Include our UI-Router config settings
+
+restaurationModule.config(_restauration2.default);
+
+// Controllers
+
+restaurationModule.controller('RestaurationCtrl', _restauration4.default);
+
+// //Services
+// import HomeService from './home.service';
+// homeModule.service('Home', HomeService);
+
+
+exports.default = restaurationModule;
+
+},{"./restauration.config":121,"./restauration.controller":122,"angular":105}],121:[function(require,module,exports){
+'use strict';
+
+RestaurationConfig.$inject = ["$stateProvider"];
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+function RestaurationConfig($stateProvider) {
+  'ngInject';
+
+  $stateProvider.state('Restauration', {
+    url: '/restauration',
+    templateUrl: 'js/Components/Restauration/restauration.html',
+    controller: 'RestaurationCtrl'
+  });
+};
+
+exports.default = RestaurationConfig;
+
+},{}],122:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var RestaurationCtrl = function RestaurationCtrl($scope, leafletData) {
+    'ngInject';
+
+    _classCallCheck(this, RestaurationCtrl);
+
+    angular.extend($scope, {
+
+        defaults: {
+            scrollWheelZoom: false
+        },
+
+        markers: {
+            cumbre: {
+                lat: 3.6476444587930907,
+                lng: -76.56929969787596,
+                message: "La Cumbre",
+                focus: false
+            },
+
+            mulalo: {
+                lat: 3.644244947716166,
+                lng: -76.49186432361603,
+                message: "mulalo",
+                focus: false
+            },
+
+            piedragrande: {
+                lat: 3.450944580701558,
+                lng: -76.59168004989623,
+                message: "piedragrande",
+                focus: false
+            },
+
+            arbolito: {
+                lat: 3.4420718167584,
+                lng: -76.60539686679839,
+                message: "Arbolito",
+                focus: false
+            },
+
+            cajita: {
+                lat: 3.451378310552176,
+                lng: -76.61656558513641,
+                message: "La Cajita",
+                focus: false
+            },
+
+            yolanda: {
+                lat: 3.4223982967446647,
+                lng: -76.6260015964508,
+                message: "La Yolanda",
+                focus: false
+            },
+
+            danubio: {
+                lat: 3.421937779452153,
+                lng: -76.6534674167633,
+                message: "Danubio",
+                focus: false
+            },
+
+            valencia: {
+                lat: 3.4212148739535606,
+                lng: -76.64283514022827,
+                message: "Valencia",
+                focus: false
+            },
+
+            yanaconas: {
+                lat: 3.4269445544112576,
+                lng: -76.6040825843811,
+                message: "Yanaconas",
+                focus: false
+            },
+
+            pance: {
+                lat: 3.322991091624113,
+                lng: -76.59765601158142,
+                message: "Pance",
+                focus: false
+            }
+        }
+
+    });
+
+    $scope.regions = {
+
+        general: {
+            northEast: {
+                lat: 3.8656247834774597,
+                lng: -76.1407470703125
+            },
+            southWest: {
+                lat: 3.2077041274093783,
+                lng: -77.04299926757812
+            }
+        },
+        parquenacional: {
+            southWest: {
+                lat: 3.3012800677970304,
+                lng: -76.75769805908203
+            },
+            northEast: {
+                lat: 3.465787667313853,
+                lng: -76.51187896728516
+            }
+        },
+        yanaconas: {
+            southWest: {
+                lat: 3.4217075207229035,
+                lng: -76.61041259765624
+            },
+            northEast: {
+                lat: 3.431988786752452,
+                lng: -76.59504890441895
+            }
+        }
+    };
+
+    angular.extend($scope, {
+        maxbounds: $scope.regions.general
+    });
+};
+RestaurationCtrl.$inject = ["$scope", "leafletData"];
+
+exports.default = RestaurationCtrl;
+
+},{}],123:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98615,7 +98917,7 @@ servicesModule.config(_services2.default);
 
 exports.default = servicesModule;
 
-},{"./services.config":119,"angular":105}],119:[function(require,module,exports){
+},{"./services.config":124,"angular":105}],124:[function(require,module,exports){
 'use strict';
 
 ServicesConfig.$inject = ["$stateProvider"];
@@ -98634,7 +98936,7 @@ function ServicesConfig($stateProvider) {
 
 exports.default = ServicesConfig;
 
-},{}],120:[function(require,module,exports){
+},{}],125:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98660,7 +98962,7 @@ toolbarModule.component('toolbarApp', _toolbar2.default);
 
 exports.default = toolbarModule;
 
-},{"./toolbar.component":121,"angular":105}],121:[function(require,module,exports){
+},{"./toolbar.component":126,"angular":105}],126:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98728,7 +99030,7 @@ var ToolbarConfig = {
 
 exports.default = ToolbarConfig;
 
-},{}],122:[function(require,module,exports){
+},{}],127:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98754,7 +99056,7 @@ tradeModule.component('tradeApp', _trademarks2.default);
 
 exports.default = tradeModule;
 
-},{"./trademarks.component":123,"angular":105}],123:[function(require,module,exports){
+},{"./trademarks.component":128,"angular":105}],128:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98777,7 +99079,7 @@ var TradeConfig = {
 
 exports.default = TradeConfig;
 
-},{}],124:[function(require,module,exports){
+},{}],129:[function(require,module,exports){
 'use strict';
 
 AppConfig.$inject = ["$urlRouterProvider", "$mdThemingProvider", "$translateProvider"];

@@ -9,11 +9,11 @@ contactModule.config(ContactConfig);
 
 // Controllers
 import ContactCtrl from './contact.controller';
-contactModule.controller('contactCtrl', ContactCtrl);
+contactModule.controller('ContactCtrl', ContactCtrl);
 
-// //Services
-// import makeService from './make.service';
-// makeModule.service('make', makeService);
+//Services
+import ContactService from './contact.service';
+contactModule.service('Contact', ContactService);
 
 
 export default contactModule;

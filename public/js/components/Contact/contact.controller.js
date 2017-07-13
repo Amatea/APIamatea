@@ -1,15 +1,10 @@
 class ContactCtrl {
-  constructor($scope) {
+  constructor($scope, Contact, $location, $http) {
     'ngInject';
 
-    $scope.contacto = function() {
-      http
-    }
+    $scope.contacto = Contact.query();
 
-
-
-
-    $scope.contactos = new Contacto();
+    $scope.contactos = new Contact();
 
     $scope.addContacto = function() {
     $scope.contactos.$save()
@@ -26,7 +21,7 @@ class ContactCtrl {
 
       $http.post('api/mail_contacto', $scope.postData)
         .success(function(data) {
-          // Show success message
+          console.log(data)
         })
         .error(function(data) {
           // Show error message

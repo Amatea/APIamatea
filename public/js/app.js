@@ -22,6 +22,7 @@ import './components/Services'
 import './components/Toolbar'
 import './components/Trademarks'
 import './components/Projects'
+import './components/Restauration'
 import './components/Footer'
 
 const requires = [
@@ -43,9 +44,17 @@ const requires = [
   'app.toolbar',
   'app.trademarks',
   'app.projects',
+  'app.restauration',
   'app.footer'
   ];
 
   window.App = angular.module('App', requires);
 
   angular.module('App').config(appConfig)
+
+  .factory('Donacion', ['$resource', function($resource){
+	return $resource('api/donaciones/:id', {id: '@_id'}, {
+		update: { method: 'PUT'},
+		get: { method: 'GET', isArray: false},
+	})
+}]);
