@@ -15,7 +15,7 @@ import 'angular-leaflet-directive';
 import 'angular-translate'
 import 'angular-translate-loader-static-files'
 
-import './components/Contact'
+import './Contact'
 import './Home'
 import './Make'
 import './Services'

@@ -98191,127 +98191,6 @@ module.exports = angular;
 },{"./angular":104}],106:[function(require,module,exports){
 'use strict';
 
-HomeConfig.$inject = ["$stateProvider"];
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-function HomeConfig($stateProvider) {
-  'ngInject';
-
-  $stateProvider.state('home', {
-    url: '/',
-    templateUrl: 'js/Home/home.html'
-
-  });
-};
-
-exports.default = HomeConfig;
-
-},{}],107:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _angular = require('angular');
-
-var _angular2 = _interopRequireDefault(_angular);
-
-var _home = require('./home.config');
-
-var _home2 = _interopRequireDefault(_home);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// Create the module where our functionality can attach to
-var homeModule = _angular2.default.module('app.home', []);
-
-// Include our UI-Router config settings
-
-homeModule.config(_home2.default);
-
-// // Controllers
-// import HomeCtrl from './home.controller';
-// homeModule.controller('HomeCtrl', HomeCtrl);
-
-// //Services
-// import HomeService from './home.service';
-// homeModule.service('Home', HomeService);
-
-
-exports.default = homeModule;
-
-},{"./home.config":106,"angular":105}],108:[function(require,module,exports){
-'use strict';
-
-var _angular = require('angular');
-
-var _angular2 = _interopRequireDefault(_angular);
-
-var _app = require('./config/app.config');
-
-var _app2 = _interopRequireDefault(_app);
-
-require('angular-ui-router');
-
-require('angular-aria');
-
-require('angular-resource');
-
-require('angular-route');
-
-require('angular-animate');
-
-require('angular-sanitize');
-
-require('angular-messages');
-
-require('angular-material');
-
-require('angular-leaflet-directive');
-
-require('angular-translate');
-
-require('angular-translate-loader-static-files');
-
-require('./components/Contact');
-
-require('./Home');
-
-require('./components/Make');
-
-require('./components/Services');
-
-require('./components/Toolbar');
-
-require('./components/Trademarks');
-
-require('./components/Projects');
-
-require('./components/Restauration');
-
-require('./components/Footer');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var requires = ['ui.router', 'ngResource', 'ngRoute', 'leaflet-directive', 'ngAnimate', 'ngAria', 'ngMessages', 'ngMaterial', 'ngSanitize', 'pascalprecht.translate', 'app.contact', 'app.home', 'app.make', 'app.services', 'app.toolbar', 'app.trademarks', 'app.projects', 'app.restauration', 'app.footer'];
-
-// Import our app config files
-
-
-window.App = _angular2.default.module('App', requires);
-
-_angular2.default.module('App').config(_app2.default).factory('Donacion', ['$resource', function ($resource) {
-  return $resource('api/donaciones/:id', { id: '@_id' }, {
-    update: { method: 'PUT' },
-    get: { method: 'GET', isArray: false }
-  });
-}]);
-
-},{"./Home":107,"./components/Contact":112,"./components/Footer":114,"./components/Make":115,"./components/Projects":117,"./components/Restauration":120,"./components/Services":123,"./components/Toolbar":125,"./components/Trademarks":127,"./config/app.config":129,"angular":105,"angular-animate":74,"angular-aria":76,"angular-leaflet-directive":77,"angular-material":79,"angular-messages":81,"angular-resource":83,"angular-route":85,"angular-sanitize":87,"angular-translate":89,"angular-translate-loader-static-files":88,"angular-ui-router":93}],109:[function(require,module,exports){
-'use strict';
-
 ContactConfig.$inject = ["$stateProvider"];
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -98321,14 +98200,14 @@ function ContactConfig($stateProvider) {
 
   $stateProvider.state('Contact', {
     url: '/contact',
-    templateUrl: 'js/Components/Contact/contact.html',
+    templateUrl: 'js/Contact/contact.html',
     controller: 'ContactCtrl'
   });
 };
 
 exports.default = ContactConfig;
 
-},{}],110:[function(require,module,exports){
+},{}],107:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98371,7 +98250,7 @@ ContactCtrl.$inject = ["$scope", "Contact", "$location", "$http"];
 
 exports.default = ContactCtrl;
 
-},{}],111:[function(require,module,exports){
+},{}],108:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98395,7 +98274,7 @@ Contact.$inject = ["$resource"];
 
 exports.default = Contact;
 
-},{}],112:[function(require,module,exports){
+},{}],109:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98437,55 +98316,26 @@ contactModule.service('Contact', _contact6.default);
 
 exports.default = contactModule;
 
-},{"./contact.config":109,"./contact.controller":110,"./contact.service":111,"angular":105}],113:[function(require,module,exports){
+},{"./contact.config":106,"./contact.controller":107,"./contact.service":108,"angular":105}],110:[function(require,module,exports){
 'use strict';
 
+HomeConfig.$inject = ["$stateProvider"];
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var FooterCtrl = function FooterCtrl($scope, $http, Donacion, $mdMedia, $mdDialog) {
+function HomeConfig($stateProvider) {
   'ngInject';
 
-  _classCallCheck(this, FooterCtrl);
+  $stateProvider.state('home', {
+    url: '/',
+    templateUrl: 'js/Home/home.html'
 
-  $scope.donacion = new Donacion();
-
-  $scope.addDonacion = function () {
-    //create a new movie. Issues a POST to /api/movies
-    $scope.donacion.$save();
-  };
-
-  $scope.postData = {};
-  $scope.postMail = function (donacion) {
-    // parametro debe serigual al $scope de los datos (contacto)
-    // wrap all your input values in $scope.postData
-    $scope.postData = angular.copy(donacion);
-
-    $http.post('api/mail_donacion', $scope.postData).success(function (data) {}).error(function (data) {});
-  };
-
-  $scope.status = '  ';
-  $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
-  $scope.showAlert = function (ev) {
-    // Appending dialog to document.body to cover sidenav in docs app
-    // Modal dialogs should fully cover application
-    // to prevent interaction outside of dialog
-    $mdDialog.show($mdDialog.alert().parent(angular.element(document.querySelector('#popupContainer'))).clickOutsideToClose(true).title('Ya casi, siembras tu Árbol!!').textContent('Nos pondremos en contacto pronto!!').ariaLabel('Alert Dialog Demo').ok('continua!').targetEvent(ev));
-  };
-};
-FooterCtrl.$inject = ["$scope", "$http", "Donacion", "$mdMedia", "$mdDialog"];
-
-var FooterConfig = {
-  templateUrl: 'js/components/Footer/footer.html',
-  controller: FooterCtrl
+  });
 };
 
-exports.default = FooterConfig;
+exports.default = HomeConfig;
 
-},{}],114:[function(require,module,exports){
+},{}],111:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98496,22 +98346,31 @@ var _angular = require('angular');
 
 var _angular2 = _interopRequireDefault(_angular);
 
-var _footer = require('./footer.component');
+var _home = require('./home.config');
 
-var _footer2 = _interopRequireDefault(_footer);
+var _home2 = _interopRequireDefault(_home);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // Create the module where our functionality can attach to
-var footerModule = _angular2.default.module('app.footer', []);
+var homeModule = _angular2.default.module('app.home', []);
 
-// Components
+// Include our UI-Router config settings
 
-footerModule.component('footerApp', _footer2.default);
+homeModule.config(_home2.default);
 
-exports.default = footerModule;
+// // Controllers
+// import HomeCtrl from './home.controller';
+// homeModule.controller('HomeCtrl', HomeCtrl);
 
-},{"./footer.component":113,"angular":105}],115:[function(require,module,exports){
+// //Services
+// import HomeService from './home.service';
+// homeModule.service('Home', HomeService);
+
+
+exports.default = homeModule;
+
+},{"./home.config":110,"angular":105}],112:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98546,7 +98405,7 @@ makeModule.config(_make2.default);
 
 exports.default = makeModule;
 
-},{"./make.config":116,"angular":105}],116:[function(require,module,exports){
+},{"./make.config":113,"angular":105}],113:[function(require,module,exports){
 'use strict';
 
 MakeConfig.$inject = ["$stateProvider"];
@@ -98558,14 +98417,14 @@ function MakeConfig($stateProvider) {
 
   $stateProvider.state('Make', {
     url: '/make',
-    templateUrl: 'js/Components/Make/make.html'
+    templateUrl: 'js/Make/make.html'
 
   });
 };
 
 exports.default = MakeConfig;
 
-},{}],117:[function(require,module,exports){
+},{}],114:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98604,7 +98463,7 @@ projectsModule.controller('ProjectCtrl', _projects4.default);
 
 exports.default = projectsModule;
 
-},{"./projects.config":118,"./projects.controller":119,"angular":105}],118:[function(require,module,exports){
+},{"./projects.config":115,"./projects.controller":116,"angular":105}],115:[function(require,module,exports){
 'use strict';
 
 ProjectsConfig.$inject = ["$stateProvider"];
@@ -98616,14 +98475,14 @@ function ProjectsConfig($stateProvider) {
 
   $stateProvider.state('Projects', {
     url: '/projects',
-    templateUrl: 'js/Components/Projects/projects.html',
+    templateUrl: 'js/Projects/projects.html',
     controller: 'ProjectCtrl'
   });
 };
 
 exports.default = ProjectsConfig;
 
-},{}],119:[function(require,module,exports){
+},{}],116:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -98688,7 +98547,7 @@ ProjectCtrl.$inject = ["$scope"];
 
 exports.default = ProjectCtrl;
 
-},{}],120:[function(require,module,exports){
+},{}],117:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98727,7 +98586,7 @@ restaurationModule.controller('RestaurationCtrl', _restauration4.default);
 
 exports.default = restaurationModule;
 
-},{"./restauration.config":121,"./restauration.controller":122,"angular":105}],121:[function(require,module,exports){
+},{"./restauration.config":118,"./restauration.controller":119,"angular":105}],118:[function(require,module,exports){
 'use strict';
 
 RestaurationConfig.$inject = ["$stateProvider"];
@@ -98739,14 +98598,14 @@ function RestaurationConfig($stateProvider) {
 
   $stateProvider.state('Restauration', {
     url: '/restauration',
-    templateUrl: 'js/Components/Restauration/restauration.html',
+    templateUrl: 'js/Restauration/restauration.html',
     controller: 'RestaurationCtrl'
   });
 };
 
 exports.default = RestaurationConfig;
 
-},{}],122:[function(require,module,exports){
+},{}],119:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -98882,7 +98741,7 @@ RestaurationCtrl.$inject = ["$scope", "leafletData"];
 
 exports.default = RestaurationCtrl;
 
-},{}],123:[function(require,module,exports){
+},{}],120:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98917,7 +98776,7 @@ servicesModule.config(_services2.default);
 
 exports.default = servicesModule;
 
-},{"./services.config":124,"angular":105}],124:[function(require,module,exports){
+},{"./services.config":121,"angular":105}],121:[function(require,module,exports){
 'use strict';
 
 ServicesConfig.$inject = ["$stateProvider"];
@@ -98929,14 +98788,155 @@ function ServicesConfig($stateProvider) {
 
   $stateProvider.state('Services', {
     url: '/services',
-    templateUrl: 'js/Components/Services/services.html'
+    templateUrl: 'js/Services/services.html'
 
   });
 };
 
 exports.default = ServicesConfig;
 
-},{}],125:[function(require,module,exports){
+},{}],122:[function(require,module,exports){
+'use strict';
+
+var _angular = require('angular');
+
+var _angular2 = _interopRequireDefault(_angular);
+
+var _app = require('./config/app.config');
+
+var _app2 = _interopRequireDefault(_app);
+
+require('angular-ui-router');
+
+require('angular-aria');
+
+require('angular-resource');
+
+require('angular-route');
+
+require('angular-animate');
+
+require('angular-sanitize');
+
+require('angular-messages');
+
+require('angular-material');
+
+require('angular-leaflet-directive');
+
+require('angular-translate');
+
+require('angular-translate-loader-static-files');
+
+require('./Contact');
+
+require('./Home');
+
+require('./Make');
+
+require('./Services');
+
+require('./components/Toolbar');
+
+require('./components/Trademarks');
+
+require('./Projects');
+
+require('./Restauration');
+
+require('./components/Footer');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var requires = ['ui.router', 'ngResource', 'ngRoute', 'leaflet-directive', 'ngAnimate', 'ngAria', 'ngMessages', 'ngMaterial', 'ngSanitize', 'pascalprecht.translate', 'app.contact', 'app.home', 'app.make', 'app.services', 'app.toolbar', 'app.trademarks', 'app.projects', 'app.restauration', 'app.footer'];
+
+// Import our app config files
+
+
+window.App = _angular2.default.module('App', requires);
+
+_angular2.default.module('App').config(_app2.default).factory('Donacion', ['$resource', function ($resource) {
+  return $resource('api/donaciones/:id', { id: '@_id' }, {
+    update: { method: 'PUT' },
+    get: { method: 'GET', isArray: false }
+  });
+}]);
+
+},{"./Contact":109,"./Home":111,"./Make":112,"./Projects":114,"./Restauration":117,"./Services":120,"./components/Footer":124,"./components/Toolbar":125,"./components/Trademarks":127,"./config/app.config":129,"angular":105,"angular-animate":74,"angular-aria":76,"angular-leaflet-directive":77,"angular-material":79,"angular-messages":81,"angular-resource":83,"angular-route":85,"angular-sanitize":87,"angular-translate":89,"angular-translate-loader-static-files":88,"angular-ui-router":93}],123:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var FooterCtrl = function FooterCtrl($scope, $http, Donacion, $mdMedia, $mdDialog) {
+  'ngInject';
+
+  _classCallCheck(this, FooterCtrl);
+
+  $scope.donacion = new Donacion();
+
+  $scope.addDonacion = function () {
+    //create a new movie. Issues a POST to /api/movies
+    $scope.donacion.$save();
+  };
+
+  $scope.postData = {};
+  $scope.postMail = function (donacion) {
+    // parametro debe serigual al $scope de los datos (contacto)
+    // wrap all your input values in $scope.postData
+    $scope.postData = angular.copy(donacion);
+
+    $http.post('api/mail_donacion', $scope.postData).success(function (data) {}).error(function (data) {});
+  };
+
+  $scope.status = '  ';
+  $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
+  $scope.showAlert = function (ev) {
+    // Appending dialog to document.body to cover sidenav in docs app
+    // Modal dialogs should fully cover application
+    // to prevent interaction outside of dialog
+    $mdDialog.show($mdDialog.alert().parent(angular.element(document.querySelector('#popupContainer'))).clickOutsideToClose(true).title('Ya casi, siembras tu Árbol!!').textContent('Nos pondremos en contacto pronto!!').ariaLabel('Alert Dialog Demo').ok('continua!').targetEvent(ev));
+  };
+};
+FooterCtrl.$inject = ["$scope", "$http", "Donacion", "$mdMedia", "$mdDialog"];
+
+var FooterConfig = {
+  templateUrl: 'js/components/Footer/footer.html',
+  controller: FooterCtrl
+};
+
+exports.default = FooterConfig;
+
+},{}],124:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _angular = require('angular');
+
+var _angular2 = _interopRequireDefault(_angular);
+
+var _footer = require('./footer.component');
+
+var _footer2 = _interopRequireDefault(_footer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// Create the module where our functionality can attach to
+var footerModule = _angular2.default.module('app.footer', []);
+
+// Components
+
+footerModule.component('footerApp', _footer2.default);
+
+exports.default = footerModule;
+
+},{"./footer.component":123,"angular":105}],125:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -99107,4 +99107,4 @@ function AppConfig($urlRouterProvider, $mdThemingProvider, $translateProvider) {
 
 exports.default = AppConfig;
 
-},{}]},{},[108]);
+},{}]},{},[122]);
