@@ -11,11 +11,24 @@
   	       		 <md-icon md-svg-src="img/icons/menu.svg"></md-icon>
   	      		</md-button>
   	    	</md-fab-trigger>
-          <a href="#/inicio.html"><div  class="header_logo"></div></a>
+          <a href="#/inicio.html"><img class="header_logo" src="/img/logo_amatea.png" alt="logo amatea"></a>
           <span flex></span>
             <div layout="row" hide-xs>
               <md-button ng-href="#!/somos/">{{ 'toolbar.about' | translate }}</md-button>
-              <md-button ng-href="#!/services">{{ 'toolbar.services' | translate }}</md-button>
+              
+              <md-menu>
+                <md-button aria-label="Open demo menu" ng-click="$mdOpenMenu($event)" aria-label="More">
+                  {{ 'toolbar.services' | translate }}
+                </md-button>
+                <md-menu-content>
+                  <md-menu-item>
+                    <md-button ng-href="#!/services">{{ 'toolbar.services' | translate }}</md-button>
+                  </md-menu-item>
+                  <md-menu-item>
+                    <md-button ng-href="#!/footprint">{{ 'toolbar.footprint' | translate }}</md-button> 
+                  </md-menu-item>
+                </md-menu-content>
+              </md-menu>
               <md-menu>
                 <md-button aria-label="Open demo menu" ng-click="$mdOpenMenu($event)" aria-label="More">
                   {{ 'toolbar.make' | translate }}

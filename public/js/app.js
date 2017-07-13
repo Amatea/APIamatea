@@ -16,6 +16,7 @@ import 'angular-translate'
 import 'angular-translate-loader-static-files'
 
 import './Contact'
+import './Footprint'
 import './Home'
 import './Make'
 import './Services'
@@ -38,6 +39,7 @@ const requires = [
   'pascalprecht.translate',
 
   'app.contact',
+  'app.footprint',
   'app.home',
   'app.make',
   'app.services',
