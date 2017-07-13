@@ -5,7 +5,7 @@ function MakeConfig($stateProvider) {
   
   .state('Make', {
       url: '/make',
-      templateUrl: 'js/Components/Make/make.html',
+      templateUrl: 'js/Make/make.html',
       
     });
   

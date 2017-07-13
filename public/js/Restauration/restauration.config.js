@@ -5,7 +5,7 @@ function RestaurationConfig($stateProvider) {
   
   .state('Restauration', {
       url: '/restauration',
-      templateUrl: 'js/Components/Restauration/restauration.html',
+      templateUrl: 'js/Restauration/restauration.html',
       controller: 'RestaurationCtrl'
     });
   

@@ -5,7 +5,7 @@ function ServicesConfig($stateProvider) {
   
   .state('Services', {
       url: '/services',
-      templateUrl: 'js/Components/Services/services.html',
+      templateUrl: 'js/Services/services.html',
       
     });
   

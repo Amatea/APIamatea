@@ -5,7 +5,7 @@ function ProjectsConfig($stateProvider) {
   
   .state('Projects', {
       url: '/projects',
-      templateUrl: 'js/Components/Projects/projects.html',
+      templateUrl: 'js/Projects/projects.html',
       controller: 'ProjectCtrl'
     });
   

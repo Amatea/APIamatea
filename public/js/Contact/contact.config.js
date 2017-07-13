@@ -5,7 +5,7 @@ function ContactConfig($stateProvider) {
   
   .state('Contact', {
       url: '/contact',
-      templateUrl: 'js/Components/Contact/contact.html',
+      templateUrl: 'js/Contact/contact.html',
       controller: 'ContactCtrl'
     });
   

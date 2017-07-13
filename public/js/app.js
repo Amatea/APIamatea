@@ -17,12 +17,12 @@ import 'angular-translate-loader-static-files'
 
 import './components/Contact'
 import './Home'
-import './components/Make'
-import './components/Services'
+import './Make'
+import './Services'
 import './components/Toolbar'
 import './components/Trademarks'
-import './components/Projects'
-import './components/Restauration'
+import './Projects'
+import './Restauration'
 import './components/Footer'
 
 const requires = [
