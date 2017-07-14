@@ -98328,14 +98328,34 @@ function FootprintConfig($stateProvider) {
 
   $stateProvider.state('Footprint', {
     url: '/footprint',
-    templateUrl: 'js/Footprint/footprint.html'
-
+    templateUrl: 'js/Footprint/footprint.html',
+    controller: 'FootCtrl'
   });
 };
 
 exports.default = FootprintConfig;
 
 },{}],111:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var FootCtrl = function FootCtrl($scope) {
+  'ngInject';
+
+  _classCallCheck(this, FootCtrl);
+
+  $scope.toppings = [{ name: 'AGUA abundante para hidratarte durante toda la jornada.', wanted: false }, { name: 'FRUTAS y bolsa para los residuos sólido.', wanted: false }, { name: 'PROTECTOR SOLAR', wanted: false }, { name: 'GORRA o SOMBRERO', wanted: false }, { name: 'REPELENTE de mosquitos, preferiblemente Natural y NO en aereosol.', wanted: false }, { name: 'CAMISA MANGA LARGA.', wanted: false }, { name: 'PANTALON LARGO.', wanted: false }, { name: 'ZAPATOS COMODOS, con suela antideslizante como tenis o botas tipo brama.', wanted: false }, { name: 'CHAQUETA O CAPA IMPERMEABLE, por si llueve', wanted: false }, { name: 'ROPA DE CAMBIO, para el final de la jornada, por si te mojas o embarras.', wanted: false }];
+};
+FootCtrl.$inject = ["$scope"];
+
+exports.default = FootCtrl;
+
+},{}],112:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98350,6 +98370,10 @@ var _footprint = require('./footprint.config');
 
 var _footprint2 = _interopRequireDefault(_footprint);
 
+var _footprint3 = require('./footprint.controller');
+
+var _footprint4 = _interopRequireDefault(_footprint3);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // Create the module where our functionality can attach to
@@ -98359,9 +98383,9 @@ var footprintModule = _angular2.default.module('app.footprint', []);
 
 footprintModule.config(_footprint2.default);
 
-// // Controllers
-// import HomeCtrl from './home.controller';
-// homeModule.controller('HomeCtrl', HomeCtrl);
+// Controllers
+
+footprintModule.controller('FootCtrl', _footprint4.default);
 
 // //Services
 // import HomeService from './home.service';
@@ -98370,7 +98394,7 @@ footprintModule.config(_footprint2.default);
 
 exports.default = footprintModule;
 
-},{"./footprint.config":110,"angular":105}],112:[function(require,module,exports){
+},{"./footprint.config":110,"./footprint.controller":111,"angular":105}],113:[function(require,module,exports){
 'use strict';
 
 HomeConfig.$inject = ["$stateProvider"];
@@ -98389,7 +98413,7 @@ function HomeConfig($stateProvider) {
 
 exports.default = HomeConfig;
 
-},{}],113:[function(require,module,exports){
+},{}],114:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98424,7 +98448,7 @@ homeModule.config(_home2.default);
 
 exports.default = homeModule;
 
-},{"./home.config":112,"angular":105}],114:[function(require,module,exports){
+},{"./home.config":113,"angular":105}],115:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98459,7 +98483,7 @@ makeModule.config(_make2.default);
 
 exports.default = makeModule;
 
-},{"./make.config":115,"angular":105}],115:[function(require,module,exports){
+},{"./make.config":116,"angular":105}],116:[function(require,module,exports){
 'use strict';
 
 MakeConfig.$inject = ["$stateProvider"];
@@ -98478,7 +98502,7 @@ function MakeConfig($stateProvider) {
 
 exports.default = MakeConfig;
 
-},{}],116:[function(require,module,exports){
+},{}],117:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98517,7 +98541,7 @@ projectsModule.controller('ProjectCtrl', _projects4.default);
 
 exports.default = projectsModule;
 
-},{"./projects.config":117,"./projects.controller":118,"angular":105}],117:[function(require,module,exports){
+},{"./projects.config":118,"./projects.controller":119,"angular":105}],118:[function(require,module,exports){
 'use strict';
 
 ProjectsConfig.$inject = ["$stateProvider"];
@@ -98536,7 +98560,7 @@ function ProjectsConfig($stateProvider) {
 
 exports.default = ProjectsConfig;
 
-},{}],118:[function(require,module,exports){
+},{}],119:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -98601,7 +98625,7 @@ ProjectCtrl.$inject = ["$scope"];
 
 exports.default = ProjectCtrl;
 
-},{}],119:[function(require,module,exports){
+},{}],120:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98640,7 +98664,7 @@ restaurationModule.controller('RestaurationCtrl', _restauration4.default);
 
 exports.default = restaurationModule;
 
-},{"./restauration.config":120,"./restauration.controller":121,"angular":105}],120:[function(require,module,exports){
+},{"./restauration.config":121,"./restauration.controller":122,"angular":105}],121:[function(require,module,exports){
 'use strict';
 
 RestaurationConfig.$inject = ["$stateProvider"];
@@ -98659,7 +98683,7 @@ function RestaurationConfig($stateProvider) {
 
 exports.default = RestaurationConfig;
 
-},{}],121:[function(require,module,exports){
+},{}],122:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -98795,7 +98819,7 @@ RestaurationCtrl.$inject = ["$scope", "leafletData"];
 
 exports.default = RestaurationCtrl;
 
-},{}],122:[function(require,module,exports){
+},{}],123:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98830,7 +98854,7 @@ servicesModule.config(_services2.default);
 
 exports.default = servicesModule;
 
-},{"./services.config":123,"angular":105}],123:[function(require,module,exports){
+},{"./services.config":124,"angular":105}],124:[function(require,module,exports){
 'use strict';
 
 ServicesConfig.$inject = ["$stateProvider"];
@@ -98849,7 +98873,7 @@ function ServicesConfig($stateProvider) {
 
 exports.default = ServicesConfig;
 
-},{}],124:[function(require,module,exports){
+},{}],125:[function(require,module,exports){
 'use strict';
 
 var _angular = require('angular');
@@ -98916,7 +98940,7 @@ _angular2.default.module('App').config(_app2.default).factory('Donacion', ['$res
   });
 }]);
 
-},{"./Contact":109,"./Footprint":111,"./Home":113,"./Make":114,"./Projects":116,"./Restauration":119,"./Services":122,"./components/Footer":126,"./components/Toolbar":127,"./components/Trademarks":129,"./config/app.config":131,"angular":105,"angular-animate":74,"angular-aria":76,"angular-leaflet-directive":77,"angular-material":79,"angular-messages":81,"angular-resource":83,"angular-route":85,"angular-sanitize":87,"angular-translate":89,"angular-translate-loader-static-files":88,"angular-ui-router":93}],125:[function(require,module,exports){
+},{"./Contact":109,"./Footprint":112,"./Home":114,"./Make":115,"./Projects":117,"./Restauration":120,"./Services":123,"./components/Footer":127,"./components/Toolbar":128,"./components/Trademarks":130,"./config/app.config":132,"angular":105,"angular-animate":74,"angular-aria":76,"angular-leaflet-directive":77,"angular-material":79,"angular-messages":81,"angular-resource":83,"angular-route":85,"angular-sanitize":87,"angular-translate":89,"angular-translate-loader-static-files":88,"angular-ui-router":93}],126:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98964,7 +98988,7 @@ var FooterConfig = {
 
 exports.default = FooterConfig;
 
-},{}],126:[function(require,module,exports){
+},{}],127:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98990,7 +99014,7 @@ footerModule.component('footerApp', _footer2.default);
 
 exports.default = footerModule;
 
-},{"./footer.component":125,"angular":105}],127:[function(require,module,exports){
+},{"./footer.component":126,"angular":105}],128:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -99016,7 +99040,7 @@ toolbarModule.component('toolbarApp', _toolbar2.default);
 
 exports.default = toolbarModule;
 
-},{"./toolbar.component":128,"angular":105}],128:[function(require,module,exports){
+},{"./toolbar.component":129,"angular":105}],129:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -99084,7 +99108,7 @@ var ToolbarConfig = {
 
 exports.default = ToolbarConfig;
 
-},{}],129:[function(require,module,exports){
+},{}],130:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -99110,7 +99134,7 @@ tradeModule.component('tradeApp', _trademarks2.default);
 
 exports.default = tradeModule;
 
-},{"./trademarks.component":130,"angular":105}],130:[function(require,module,exports){
+},{"./trademarks.component":131,"angular":105}],131:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -99133,7 +99157,7 @@ var TradeConfig = {
 
 exports.default = TradeConfig;
 
-},{}],131:[function(require,module,exports){
+},{}],132:[function(require,module,exports){
 'use strict';
 
 AppConfig.$inject = ["$urlRouterProvider", "$mdThemingProvider", "$translateProvider"];
@@ -99161,4 +99185,4 @@ function AppConfig($urlRouterProvider, $mdThemingProvider, $translateProvider) {
 
 exports.default = AppConfig;
 
-},{}]},{},[124]);
+},{}]},{},[125]);

@@ -7,9 +7,9 @@ let footprintModule = angular.module('app.footprint', []);
 import FootprintConfig from './footprint.config';
 footprintModule.config(FootprintConfig);
 
-// // Controllers
-// import HomeCtrl from './home.controller';
-// homeModule.controller('HomeCtrl', HomeCtrl);
+// Controllers
+import FootCtrl from './footprint.controller';
+footprintModule.controller('FootCtrl', FootCtrl);
 
 // //Services
 // import HomeService from './home.service';
