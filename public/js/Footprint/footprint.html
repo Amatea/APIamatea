@@ -7,43 +7,43 @@
       </div>
     </div>
   </div>
+  <div>
+    <div flex-offset="10" flex="80">
+      <h2 layout-align="center center">Aprende a reconocer a través de los sentidos, en medio de la naturaleza, los biorritmos que nos permiten armonizarnos en la vida diaria.</h2> 
+    </div>
+    <div flex-offset="50" flex="30">
+      <span>
+        Para <strong>Amatea</strong> es vital que los grupos humanos y las familias que hacen parte de las organizaciones de nuestro programa :Somos Huella
+        Somos Eco:: entren en Sincronía con la Naturaleza, todas y todos hacemos parte de este propósito planetario.
+      </span>
+    </div>
+      <div class="phrase" flex-offset="10" flex="80">
+        Lo más importante de tu participación en la jornada ecológica es que traigas muy buena disposición para: caminar, conectarte con la naturaleza, disfrutar, relajarte, compartir, respirar aire fresco
+      </div>
+      <h2 class="fp-info" flex-offset="10" flex="80">¡RECUERDA TRAER TU CORAZÓN LLENO DE AMOR PARA HACER TU ENTREGA A LA MADRE TIERRA!</h2>
+      <div>
+      <md-toolbar>
+        <div class="md-accent" flex-offset="20" flex="60">
+          <h2>Lista de chequeo</h2>
+          <p>recuerda llevar:</p>
+        </div>
+      </md-toolbar>
+      <div class="check-list">
+        <md-list-item ng-repeat="topping in toppings" layout="row" flex-offset="20" flex="60">
+        <p flex><i class="fa fa-sun-o" aria-hidden="true"></i>  {{ topping.name }}</p>
+        <md-checkbox class="md-secondary" ng-model="topping.wanted" flex></md-checkbox>
+      </md-list-item>
+      </div>
+    </div>
+    <md-content>
+    <md-list class="recommendations">
+      <md-list-item class="md-3-line" ng-repeat="item in messages">
+        <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
+        <div class="md-list-item-text">
+          <p>{{item.message}}</p>
+        </div>
+        <md-divider md-inset ng-if="!$last"></md-divider>
+      </md-list-item>
+    </md-list>
+  </md-content>
 </section>
-<div layout="column" layout-align="center center">
-  <div>
-    <h2 layout-align="center center">Aprende a reconocer a través de los sentidos, en medio de la naturaleza, los biorritmos que nos permiten armonizarnos en la vida diaria.</h2> 
-  </div>
-  <div>
-    <span>
-      Para <strong>Amatea</strong> es vital que los grupos humanos y las familias que hacen parte de las organizaciones de nuestro programa :Somos Huella
-      Somos Eco:: entren en Sincronía con la Naturaleza, todas y todos hacemos parte de este propósito planetario.
-    </span>
-  </div>
-  <div>
-    Lo más importante de tu participación en la jornada ecológica es que traigas muy buena
-disposición para: caminar, conectarte con la naturaleza, disfrutar, relajarte, compartir,
-respirar aire fresco
-  </div>
-  <h2>¡RECUERDA TRAER TU CORAZÓN LLENO DE AMOR PARA HACER TU ENTREGA
-A LA MADRE TIERRA!</h2>
-<div>Niñas y Niños. A la salida pueden asistir niñas y niños preferiblemente a partir de los 4 años, si son menores
-es muy probable que un adulto deba cargarlos durante algún trayecto de la caminata. Es importante que las
-niñas y los niños estén en buenas condiciones de salud.
-Adultas y Adultos Mayores. Adultas y adultos mayores también pueden asistir siempre y cuando tengan
-alguna rutina de actividad física; o sea buen estado físico y tengan el hábito de hacer caminatas diarias.
-También es muy importante que estén en buenas condiciones de salud (sin lesiones físicas, dificultades
-respiratorias o cardiacas).
-Alimentación. Recuerda tomar un rico y saludable desayuno antes de salir de casa. Si quieres traer
-alimentos, preferiblemente nada que haga basura. Las Frutas son la mejor opción; son muy saludables y no
-hay riesgos de que contamines el bosque con plásticos y paquetes. No te preocupes por traer mucha comida
-pues al final del recorrido tomaremos un refrigerio.
-Agua. Recuerda traer abundante agua para tu adecuada hidratación durante toda la jornada ecológica.
-Equipaje. Para cargar tu agua y tus frutas te recomendamos que lleves una mochila o maleta muy ligera y
-cómoda, es necesario que lleves las manos libres para caminar. Recuerda empacar ropa de cambio por si te
-mojas o te embarras, gorra y también una chaqueta o capa impermeable por si llueve.</div>
-  <h2 class="md-no-sticky">Lista de chequeo</h2>
-  <div>recuerda llevar:</div>
-  <md-list-item ng-repeat="topping in toppings">
-    <p> {{ topping.name }} </p>
-    <md-checkbox class="md-secondary" ng-model="topping.wanted"></md-checkbox>
-  </md-list-item>
-</div>

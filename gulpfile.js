@@ -9,8 +9,8 @@ var rename        = require('gulp-rename');
 var uglify        = require('gulp-uglify');
 var merge         = require('merge-stream');
 var sass          = require('gulp-sass');
-var nodemon       = require('gulp-nodemon')
-var reload        = browserSync.reload;
+
+
 
 // Where our files are located
 var jsFiles   = "src/js/**/*.js";
@@ -84,37 +84,4 @@ gulp.task('sass', function () {
 });
 
 
-gulp.task('browser-sync', ['nodemon'], function() {
-  browserSync({
-    proxy: "localhost:3000",  // local node app address
-    port: 5000,  // use *different* port than above
-    files: ["public/**/*.*"],
-    notify: true
-  });
-});
-
-gulp.task('nodemon', function (cb) {
-  var called = false;
-  return nodemon({
-    script: 'amatea-server.js',
-    ignore: [
-      'gulpfile.js',
-      'node_modules/'
-    ]
-  })
-  .on('start', function () {
-    if (!called) {
-      called = true;
-      cb();
-    }
-  })
-  .on('restart', function () {
-    setTimeout(function () {
-      reload({ stream: false });
-    }, 1000);
-  });
-});
-
-gulp.task('default', ['html', 'browserify', 'sass', 'browser-sync'], function () {
-  gulp.watch(['public/*.html'], reload); 
-});
+gulp.task('default', ['html', 'browserify', 'sass']);

@@ -6,7 +6,8 @@ function FootprintConfig($stateProvider) {
   .state('Footprint', {
       url: '/footprint',
       templateUrl: 'js/Footprint/footprint.html',
-      controller: 'FootCtrl'
+      controller: 'FootCtrl',
+      css: 'js/Footprint/footprint.css'
     });
   
 };

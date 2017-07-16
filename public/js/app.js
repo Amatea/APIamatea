@@ -4,6 +4,7 @@ import angular from 'angular';
 import appConfig  from './config/app.config';
 
 import 'angular-ui-router';
+import 'angular-css';
 import 'angular-aria';
 import 'angular-resource';
 import 'angular-route';
@@ -29,6 +30,7 @@ import './components/Footer'
 const requires = [
   'ui.router',
   'ngResource',
+  'angularCSS',
   'ngRoute',
   'leaflet-directive',
   'ngAnimate',
