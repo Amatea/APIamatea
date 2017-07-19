@@ -1,7 +1,7 @@
-import angular from 'angular';
+import angular from 'angular'
 
 // Import our app config files
-import appConfig  from './config/app.config';
+import appConfig  from './config/app.config'
 
 import 'angular-ui-router';
 import 'angular-css';

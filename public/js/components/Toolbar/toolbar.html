@@ -70,10 +70,10 @@
       <a href="#/inicio.html"><div  class="header_logo"></div></a>
       </md-toolbar>
       <md-content layout="column" layout-padding>
-        <md-button ng-href="#!/somos">{{ 'toolbar.about' | translate }}</md-button>
-        <md-button ng-href="#!/services">{{ 'toolbar.services' | translate }}</md-button> 
-        <md-button ng-href="#!/make">{{ 'toolbar.projects' | translate }}</md-button> 
-        <md-button ng-href="#!/contact">{{ 'toolbar.contact' | translate }}</md-button>
+        <md-button ng-href="#!/somos" ng-click="close()">{{ 'toolbar.about' | translate }}</md-button>
+        <md-button ng-href="#!/services" ng-click="close()">{{ 'toolbar.services' | translate }}</md-button> 
+        <md-button ng-href="#!/make" ng-click="close()">{{ 'toolbar.projects' | translate }}</md-button> 
+        <md-button ng-href="#!/contact" ng-click="close()">{{ 'toolbar.contact' | translate }}</md-button>
       </md-content>
       
       <md-content layout="row" layout-align="center center">

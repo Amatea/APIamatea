@@ -1,0 +1,1 @@
+console.error("\n/Users/Amatea_Flora/Documents/amatea.io/APIamatea/public/js/app.js:1\nimport angular from 'angular';\n^\nParseError: 'import' and 'export' may appear only with 'sourceType: module'");

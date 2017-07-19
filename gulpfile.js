@@ -3,14 +3,10 @@ var notify        = require('gulp-notify');
 var source        = require('vinyl-source-stream');
 var browserify    = require('browserify');
 var babelify      = require('babelify');
-var ngAnnotate    = require('browserify-ngannotate');
-var browserSync   = require('browser-sync')
 var rename        = require('gulp-rename');
 var uglify        = require('gulp-uglify');
 var merge         = require('merge-stream');
 var sass          = require('gulp-sass');
-
-
 
 // Where our files are located
 var jsFiles   = "src/js/**/*.js";
@@ -33,7 +29,6 @@ var interceptErrors = function(error) {
 gulp.task('browserify', function() {
   return browserify('./public/js/app.js')
       .transform(babelify, {presets: ["es2015"]})
-      .transform(ngAnnotate)
       .bundle()
       .on('error', interceptErrors)
       //Pass desired output filename to vinyl-source-stream
@@ -54,16 +49,6 @@ gulp.task('html', function() {
 //       .pipe(gulp.dest('./public/build/img'));
 // });
 
-// gulp.task('views', function() {
-//   return gulp.src(viewFiles)
-//       .pipe(templateCache({
-//         standalone: true
-//       }))
-//       .on('error', interceptErrors)
-//       .pipe(rename("app.templates.js"))
-//       .pipe(gulp.dest('./src/js/config/'));
-// });
-
 // This task is used for building production ready
 // minified JS/CSS files into the dist/ folder
 gulp.task('build', ['html', 'browserify'], function() {
@@ -82,6 +67,7 @@ gulp.task('sass', function () {
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(gulp.dest('./public/build'));
 });
+
 
 
 gulp.task('default', ['html', 'browserify', 'sass']);
