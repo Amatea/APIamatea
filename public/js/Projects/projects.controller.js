@@ -16,7 +16,7 @@ class ProjectCtrl {
         },
         {
           "id": 2,
-          "img": "",
+          "img": "http://www.elpais.com.co/files/article_main/uploads/2017/01/30/588fd8858d539.jpeg",
           "name": "Conservación de la biodiversidad en paisajes impactados por la minería  en la Región del Chocó Biogeográfico",
           "description": "Apoyo en el Parque Nacional Farallones",
           "objetive": "Apoyar y facilitar actividades técnicas y administrativas al PNN Farallones de Cali en el marco del proyecto",
@@ -46,7 +46,7 @@ class ProjectCtrl {
         },
         {
           "id": 5,
-          "img": "",
+          "img": "https://lh5.googleusercontent.com/Jbys_DeMXTJZ73imtY8_tSjN6i8l_G1YdAxN-K8Uj6KwAornGegzD-Jt9voQJ6RtaIgWDvE4Jc7309Y=w1197-h648-rw",
           "name": "Compensación Huella de Carbono Recamier",
           "description": "Proyecto de Compensación ambiental de la empresa Recamier",
           "objetive": "Contribuir a la restauracion ecologica por medio de siembra de arboles en el marco de la compensación ambiental de la empresa Recamier",
