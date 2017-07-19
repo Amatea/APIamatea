@@ -3,7 +3,7 @@
 	<span class="md-title">{{ 'projects.PARAGRAPH' | translate }}</span>
 </md-content>
 
-<div class="md-padding" layout-xs="column" layout-sm="column" layout-md="column" layout="row">
+<div class="md-padding" flex-offset-gt-sm="20" flex-gt-sm="60">
 	<div ng-repeat="p in proyecto" >
 	  <md-content>
 	      <md-card flex>
@@ -12,7 +12,7 @@
             <img src="img/logo_ubi.jpg"/>
           </md-card-avatar>
           <md-card-header-text>
-            <span class="md-title">Ubicación:: {{p.location}}</span>
+            <span class="md-title">Financiado por: {{p.sponsor}}</span>
             <span class="md-subhead">{{p.id | translate}}</span>
           </md-card-header-text>
         </md-card-header>
@@ -20,37 +20,22 @@
         <md-content>
         	
 
-        	<md-card-title layout="row" layout-xs="column" >
-        		<!--<md-card-title-media flex>
-            		<img ng-src="{{proyecto.imagen}}" class="md-card-image" alt="Washed Out">
-          		</md-card-title-media>-->
+        	<md-card-title layout="column" flex>
+        		<md-card-title-media>
+            		<img ng-src="{{p.img}}" class="md-card-image card-img" alt="Proyectos Amatea projects">
+          		</md-card-title-media>
 		        
 		          <md-card-title-text layout-margin>
-		            <span class="md-headline">{{p.name }}</span>
-		            <span class="md-subhead">Objetivo:: {{p.objetive }}</span>
+		            <span class="md-headline">{{p.name}}</span>
 	          	  </md-card-title-text>
 	            </md-card-title>
 	        </md-card-content>
 	        <md-content>
 	        <md-card-content>
 	          <p>
-	            Descripcion:: {{p.description}}
+	            {{p.description}}
 	          </p>
-						<p>
-	            Financiado por: {{p.sponsor}}
-	          </p>
-	        
-	        <md-card-actions >
-	        <md-card-title  >    
-	          <md-card-title-text layout="row">
-	          <span class="md-subhead" layout-margin>Periodo::</span>
-	      
-	          	<span class="md-subhead" layout-margin>{{p.period}}</span>
-	          	
-	          </md-card-title-text>
-	        
-	         </md-card-title>
-	        </md-card-actions>
+						<p class="md-subhead" layout-margin>Periodo: {{p.period}}</p>
 	      </md-card>
 	    </md-content>
 	 
