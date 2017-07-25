@@ -11,12 +11,21 @@
     <div flex-offset="10" flex="80">
       <h2 layout-align="center center">Aprende a reconocer a través de los sentidos, en medio de la naturaleza, los biorritmos que nos permiten armonizarnos en la vida diaria.</h2> 
     </div>
-    <div flex-offset="50" flex="30">
-      <span>
-        Para <strong>Amatea</strong> es vital que los grupos humanos y las familias que hacen parte de las organizaciones de nuestro programa :Somos Huella
-        Somos Eco:: entren en Sincronía con la Naturaleza, todas y todos hacemos parte de este propósito planetario.
-      </span>
+    
+    <div layout="row">
+      <div flex-offset="5" flex="40">
+        <img src="img/footprint2.jpg">
+          
+        </img>
+      </div>
+      <div flex-offset="10" flex="30">
+        <span>
+          Para <strong>Amatea</strong> es vital que los grupos humanos y las familias que hacen parte de las organizaciones de nuestro programa :Somos Huella
+          Somos Eco:: entren en Sincronía con la Naturaleza, todas y todos hacemos parte de este propósito planetario.
+        </span>
+      </div>
     </div>
+    
       <div class="phrase" flex-offset="10" flex="80">
         Lo más importante de tu participación en la jornada ecológica es que traigas muy buena disposición para: caminar, conectarte con la naturaleza, disfrutar, relajarte, compartir, respirar aire fresco
       </div>
@@ -30,7 +39,7 @@
       </md-toolbar>
       <div class="check-list">
         <md-list-item ng-repeat="topping in toppings" layout="row" flex-offset="20" flex="60">
-        <p flex><i class="fa fa-sun-o" aria-hidden="true"></i>  {{ topping.name }}</p>
+        <p flex><i class="material-icons md-blue notranslate">check</i> {{ topping.name }}</p>
         <md-checkbox class="md-secondary" ng-model="topping.wanted" flex></md-checkbox>
       </md-list-item>
       </div>
