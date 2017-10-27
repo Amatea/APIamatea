@@ -23,6 +23,7 @@ import './Make'
 import './Services'
 import './components/Toolbar'
 import './components/Trademarks'
+import './components/Our'
 import './Projects'
 import './Restauration'
 import './components/Footer'
@@ -47,6 +48,7 @@ const requires = [
   'app.services',
   'app.toolbar',
   'app.trademarks',
+  'app.our',
   'app.projects',
   'app.restauration',
   'app.footer'
