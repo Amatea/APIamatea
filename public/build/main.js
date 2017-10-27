@@ -99599,8 +99599,6 @@ require('./components/Trademarks');
 
 require('./components/Our');
 
-require('./components/A');
-
 require('./Projects');
 
 require('./Restauration');
@@ -99609,10 +99607,8 @@ require('./components/Footer');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var requires = ['ui.router', 'ngResource', 'angularCSS', 'ngRoute', 'leaflet-directive', 'ngAnimate', 'ngAria', 'ngMessages', 'ngMaterial', 'ngSanitize', 'pascalprecht.translate', 'app.contact', 'app.footprint', 'app.home', 'app.make', 'app.services', 'app.toolbar', 'app.trademarks', 'app.our', 'app.a', 'app.projects', 'app.restauration', 'app.footer'];
-
 // Import our app config files
-
+var requires = ['ui.router', 'ngResource', 'angularCSS', 'ngRoute', 'leaflet-directive', 'ngAnimate', 'ngAria', 'ngMessages', 'ngMaterial', 'ngSanitize', 'pascalprecht.translate', 'app.contact', 'app.footprint', 'app.home', 'app.make', 'app.services', 'app.toolbar', 'app.trademarks', 'app.our', 'app.projects', 'app.restauration', 'app.footer'];
 
 window.App = _angular2.default.module('App', requires);
 
@@ -99623,55 +99619,7 @@ _angular2.default.module('App').config(_app2.default).factory('Donacion', ['$res
   });
 }]);
 
-},{"./Contact":111,"./Footprint":114,"./Home":116,"./Make":117,"./Projects":119,"./Restauration":122,"./Services":125,"./components/A":129,"./components/Footer":131,"./components/Our":132,"./components/Toolbar":134,"./components/Trademarks":136,"./config/app.config":138,"angular":107,"angular-animate":74,"angular-aria":76,"angular-css":78,"angular-leaflet-directive":79,"angular-material":81,"angular-messages":83,"angular-resource":85,"angular-route":87,"angular-sanitize":89,"angular-translate":91,"angular-translate-loader-static-files":90,"angular-ui-router":95}],128:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var ACtrl = function ACtrl($scope) {
-  'ngInject';
-
-  _classCallCheck(this, ACtrl);
-};
-
-var AConfig = {
-  controller: ACtrl,
-  templateUrl: 'js/components/A/a.html'
-};
-
-exports.default = AConfig;
-
-},{}],129:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _angular = require('angular');
-
-var _angular2 = _interopRequireDefault(_angular);
-
-var _a = require('./a.component');
-
-var _a2 = _interopRequireDefault(_a);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// Create the module where our functionality can attach to
-var aModule = _angular2.default.module('app.a', []);
-
-// Components
-
-aModule.component('aApp', _a2.default);
-
-exports.default = aModule;
-
-},{"./a.component":128,"angular":107}],130:[function(require,module,exports){
+},{"./Contact":111,"./Footprint":114,"./Home":116,"./Make":117,"./Projects":119,"./Restauration":122,"./Services":125,"./components/Footer":129,"./components/Our":130,"./components/Toolbar":132,"./components/Trademarks":134,"./config/app.config":136,"angular":107,"angular-animate":74,"angular-aria":76,"angular-css":78,"angular-leaflet-directive":79,"angular-material":81,"angular-messages":83,"angular-resource":85,"angular-route":87,"angular-sanitize":89,"angular-translate":91,"angular-translate-loader-static-files":90,"angular-ui-router":95}],128:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -99718,7 +99666,7 @@ var FooterConfig = {
 
 exports.default = FooterConfig;
 
-},{}],131:[function(require,module,exports){
+},{}],129:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -99744,7 +99692,7 @@ footerModule.component('footerApp', _footer2.default);
 
 exports.default = footerModule;
 
-},{"./footer.component":130,"angular":107}],132:[function(require,module,exports){
+},{"./footer.component":128,"angular":107}],130:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -99770,7 +99718,7 @@ ourModule.component('ourApp', _our2.default);
 
 exports.default = ourModule;
 
-},{"./our.component":133,"angular":107}],133:[function(require,module,exports){
+},{"./our.component":131,"angular":107}],131:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -99792,7 +99740,7 @@ var OurConfig = {
 
 exports.default = OurConfig;
 
-},{}],134:[function(require,module,exports){
+},{}],132:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -99818,7 +99766,7 @@ toolbarModule.component('toolbarApp', _toolbar2.default);
 
 exports.default = toolbarModule;
 
-},{"./toolbar.component":135,"angular":107}],135:[function(require,module,exports){
+},{"./toolbar.component":133,"angular":107}],133:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -99885,7 +99833,7 @@ var ToolbarConfig = {
 
 exports.default = ToolbarConfig;
 
-},{}],136:[function(require,module,exports){
+},{}],134:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -99911,7 +99859,7 @@ tradeModule.component('tradeApp', _trademarks2.default);
 
 exports.default = tradeModule;
 
-},{"./trademarks.component":137,"angular":107}],137:[function(require,module,exports){
+},{"./trademarks.component":135,"angular":107}],135:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -99933,7 +99881,7 @@ var TradeConfig = {
 
 exports.default = TradeConfig;
 
-},{}],138:[function(require,module,exports){
+},{}],136:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
